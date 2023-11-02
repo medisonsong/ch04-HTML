@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ [실습] 
+ 성적을 관리하는 배열을 생성, 5과목(국어,영어,수학,과학,미술)
+ 배열명은 score, 총점(getSum) 함수, 평균(getAvg) 함수 // 입력하는거 없이 처음부터 값을 가지고 출발
+ [출력 예시]
+ 총점 : 120
+ 평균 : 24
+ */
+ 	
+ 	const score = [90,100,90,95,100];
+ 	
+ 	//함수 정의
+	function getSum(){
+		let sum = 0;
+ 		for(let i=0; i<score.length; i++){
+ 			sum += score[i];
+ 		}
+ 		return sum;
+ 	}
+	function getAvg(){
+		return getSum()/score.length;
+	}
+ 	
+ 	document.write('총점 : ' + getSum() + '<br>');
+ 	document.write('평균 : ' + getAvg() + '<br>');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- 버튼을 누르면 전/앞 페이지로 이동하게 만들거임 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>history</title>
+</head>
+<body>
+<input type="button" value="뒤로 한 칸" onclick="history.back()">
+<input type="button" value="뒤로 한 칸" onclick="history.go(-1)"><br>
+
+<input type="button" value="앞으로 한 칸" onclick="history.forward()">
+<input type="button" value="앞으로 한 칸" onclick="history.go(1)">
+</body>
+</html>
+<!-- 
+뒤로 이동
+history.back()
+history.go(-1) // go -- 양수: 앞으로/음수: 뒤로 이동
+	go(-2) : 전전 페이지로 이동 // 숫자를 이용해서 얼마나 이동할지 선택할 수 있음 근데 보통 1 아니면 2만 씀
+
+위 뒤로 가는 버튼이 history가 있어야 동작하기 때문에
+실행 후 s02_window.html 로 주소창을 옮겨서 이동 한 번 하고 history를 일부러 만들었음!
+복습할 때도 그렇게 하면 됨
+
+앞으로 이동
+얘도 실행 후 s04_location.html 실행 후 백버튼 누르고 실습
+ -->

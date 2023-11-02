@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>toString() 메서드 사용</title>
+</head>
+<body>
+<script type="text/javascript">
+	const student = {};
+	
+	document.write(student + '<br>'); //[object Object]
+	document.write(student.toString() + '<br>'); //[object Object]
+	document.write('-------------------<br>');
+	
+	
+	//객체에 속성 추가
+	student.이름 = '홍길동';
+	student.취미 = '악기';
+	student.특기 = '프로그래밍';
+	student.장래희망 = '프로그래머';
+	
+	for(let key in student){
+		document.write(key + ' : ' + student[key] + '<br>');
+	}
+	document.write('-------------------<br>');
+	
+	
+	/*
+	//객체에 메서드 추가 (toString의 재정의)
+	student.toString = function(){ 
+		let msg = '';
+		for(let key in this){ // for(let key in student)
+			msg += key + ' : ' + this[key] + '<br>'; // msg += key + ' : ' + student[key] + '<br>';
+		}
+		return msg;
+	};
+	document.write(student.toString()); //student값뿐만 아니라 toString 자기자신도 출력됨
+	document.write('-------------------<br>');
+	document.write(student); //toString과 똑같이 출력됨
+	*/
+	
+	
+	//위 구문에서 toString 본인도 출력되는걸 제외시키고 싶을 때
+	student.toString = function(){ 
+		let msg = '';
+		for(let key in this){ // this: 객체 안에서 객체 참조
+			if(key != 'toString'){ // toString메서드는 제외
+				msg += key + ' : ' + this[key] + '<br>'; 
+			}
+		}
+		return msg;
+	};
+	document.write(student.toString()); //student값만 출력
+	document.write('-------------------<br>');
+	document.write(student); //toString과 똑같이 출력
+	
+</script>
+</body>
+</html>
+<!-- 
+	본래 toString은 [object Object]를 출력하는데
+	자바 오버라이딩처럼
+	객체에 toString 메서드를 추가하면서 재정의를 했음
+	---------------------------------------
+	식별자는 언제든 바뀔 수 있어서
+	객체 내부 메서드에서 객체명을 명시할 때에 객체명보다는 this를 쓰는게 좋음
+ -->

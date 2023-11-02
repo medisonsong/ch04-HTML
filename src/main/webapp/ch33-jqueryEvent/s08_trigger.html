@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+
+<!-- CDN[Contents Delivery Network] 방식 : URL을 통해 js파일 연결-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+/*
+ trigger() : 이벤트 강제 발생
+ */
+ 
+ 	//이벤트 연결
+ 	$('h1').on('click',function(){
+ 		$(this).html(function(index,html){//내용을 읽어와서 가공
+ 			return html + '*'; // html == Start: 를 말함
+ 		});
+ 	});
+ 
+ 	//1초마다 함수를 실행
+ 	setInterval(function(){
+ 		$('h1').trigger('click');//이벤트가 강제로 발생한 것처럼 인식해줌
+ 	},1000);
+ 	
+}); 
+</script>
+</head>
+<body>
+	<h1>Start:</h1>
+</body>
+</html>
+<!-- 
+setInterval 또는 setTimeout 이랑 같이 자주 쓰임
+
+이벤트 처리시 자동으로 이미지가 움직인다거나 하는거라서..!
+ -->

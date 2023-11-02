@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>name 속성을 이용한 문서 객체 탐색</title>
+<script type="text/javascript">
+window.onload = function(){
+	//name 속성은 id와 다르게 중복될 수도 있음 (s01_form보면 season이 중복되어 있음/체크박스)
+	//그래서 얜 배열로 인식, 반환하고 각각의 태그는 인덱스로 구분함
+	let prev = document.getElementsByName('prev');
+	let next = document.getElementsByName('next');
+	
+	prev[0].innerHTML = '이전';
+	next[0].innerHTML = '다음';
+	
+	let country = document.getElementsByName('country');
+	country[0].checked = true; // 한국에 기본적으로 체크해준다 이거임
+	
+	let comment = document.getElementsByName('comment');
+	comment[0].value = '간단한 설명 입력';
+	
+};
+</script>
+</head>
+<body>
+	<button name="prev">prev</button>
+	<button name="next">next</button>
+	<br>
+	<input type="checkbox" name="country" value="한국">한국
+	<input type="checkbox" name="country" value="미국">미국
+	<input type="checkbox" name="country" value="중국">중국
+	<br>
+	<input type="text" name="comment">
+</body>
+</html>
+<!-- 
+input 태그로 type="button"해도 되고 button태그가 따로 있어서 그걸로 해도 됨
+
+id는 unique한 값이라서 getElement인데
+name은 s01_form에 체크박스 표시한 것처럼 중복값을 설정할 수 있기 때문에
+배열로 인식하고 반환함 그래서 getElements/ 배열명[인덱스값] 으로 구분해야함
+ -->
+ 

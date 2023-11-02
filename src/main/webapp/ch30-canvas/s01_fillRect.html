@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<style type="text/css">
+	#canvas{
+		border:1px solid #999999; /*회색 / 캔버스 영역입니다*/
+	}
+</style>
+<script type="text/javascript">
+window.onload=function(){ //canvas 인식 후 여기다 그림 그려야해서 필수
+	let canvas = document.getElementById('canvas');
+	if(canvas.getContext){
+		let context = canvas.getContext('2d'); //붓 역할
+		context.fillStyle = 'rgb(200,0,0)'; //색상 지정
+		context.fillRect(0,0,100,100); //사각형 그리기/ (x,y,width,height)좌표
+		
+		//중첩된 사각형 그리기
+		context.fillRect(150,150,100,100); //사각형 x,y,width,height
+		
+		//투명도 지정
+		//색상 및 알파값 지정(0.0 완전 투명 ~ 1.0 완전 불투명)
+		context.fillStyle = 'rgba(0,0,200,0.5)';
+		context.fillRect(150,200,100,100);//사각형 x,y,width,height
+	}else{
+		alert('브라우저가 캔버스를 지원하지 않습니다.');
+	}
+};
+
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300"></canvas>
+</body>
+</html>
+<!-- 
+html5를 지원하지 않는다면 캔버스를 지원하지 않음
+캔버스 안에 getContext가 있으면 가능함 -> if(canvas.getContext){} 
+ -->

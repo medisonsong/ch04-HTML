@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>프로토타입을 사용한 메서드 정의</title>
+</head>
+<body>
+<script type="text/javascript">
+	//생성자 함수 정의
+	function Student(name,korean,math,english,science){
+		//속성 지정
+		this.이름 = name;
+		this.국어 = korean;
+		this.수학 = math;
+		this.영어 = english;
+		this.과학 = science;
+	}
+	
+	//프로토 타입은 생성자 함수를 사용해 생성된 객체가 공통으로 가지는 공간 / {}로 생성하는 객체에선 쓸 수 없음 
+	Student.prototype.getSum = function(){
+		return this.국어 + this.수학 + this.영어 + this.과학;
+	};
+	Student.prototype.getAverage = function(){
+		return this.getSum()/4; // 얘도 this를 씀
+	};
+	Student.prototype.toString = function(){
+		return this.이름 + ', ' + this.getSum() + ', ' + this.getAverage();
+	}
+	
+	//호출
+	//빈 배열 생성
+	const students = [];
+	
+	//데이터 넣어주기
+	students.push(new Student('홍길동',98,91,96,94));
+	students.push(new Student('박문수',92,97,96,94));
+	students.push(new Student('장영실',98,97,76,94));
+	students.push(new Student('김유신',93,95,96,94));
+	students.push(new Student('이순신',98,97,96,99));
+	
+	//출력
+	document.write('이름, 총점, 평균<br>');
+	
+	for(let i in students){
+		document.write(students[i].toString() + '<br>');
+	}
+	/*
+	이름, 총점, 평균
+	홍길동, 379, 94.75
+	박문수, 379, 94.75
+	장영실, 365, 91.25
+	김유신, 378, 94.5
+	이순신, 390, 97.5
+	*/
+	
+</script>
+</body>
+</html>
+<!-- 
+
+ -->

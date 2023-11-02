@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HSL</title>
+<style type="text/css">
+/*
+HSL: 색조(hue), 채도(saturation), 명도(lightness)로 컬러를 표현 (기재도 순서대로)
+*/
+
+div{width:300px;height:30px;}
+div.c1{background-color:hsl(320,100%,25%);}
+div.c2{background-color:hsl(320,100%,50%);}
+div.c3{background-color:hsl(320,100%,75%);}
+
+/*여기도 알파값(투명도) 설정 가능*/
+div.s1{background-color:hsla(165,35%,50%,0.2);}
+div.s2{background-color:hsla(165,35%,50%,0.4);}
+div.s3{background-color:hsla(165,35%,50%,0.6);}
+div.s4{background-color:hsla(165,35%,50%,0.8);}
+div.s5{background-color:hsla(165,35%,50%,1.0);}
+
+</style>
+</head>
+<body>
+<div class="c1"></div>
+<div class="c2"></div>
+<div class="c3"></div>
+<br>
+<div class="s1"></div>
+<div class="s2"></div>
+<div class="s3"></div>
+<div class="s4"></div>
+<div class="s5"></div>
+</body>
+</html>

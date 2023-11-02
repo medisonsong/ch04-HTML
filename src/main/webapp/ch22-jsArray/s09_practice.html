@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+</head>
+<body>
+<script type="text/javascript">
+//배열에 입력 받아서 같은 패턴으로 작업
+/*
+[실습]
+성적을 관리하는 배열을 생성/ 5과목(국어, 영어, 수학, 과학, 미술)
+배열명은 score, 총점(getSum) 함수, 평균(getAvg) 함수
+[입력 예시] prompt 를 이용해서 국어,영어,수학,과학,미술 성적 입력 (한번에 조건 체크)
+ 			입력 과목은 0~100 입력 가능, 음수이거나 100을 초과하면
+ 			"성적은 0부터 100사이만 입력하세요"
+ [출력 예시]
+ 총점 : 140
+ 평균 : 
+ */
+ 
+ const score = [];
+ let sum = 0;
+ 
+ function getSum(){
+	 for(let i=0; i<score.length; i++){
+		 sum += score[i];
+	 }
+	 return sum;
+ }
+ function getAvg(){
+	 return getSum()/score.length;
+ }
+ 
+ var korean = prompt('국어 성적 입력','');
+ var english = prompt('영어 성적 입력','');
+ var math = prompt('수학 성적 입력','');
+ var science = prompt('과학 성적 입력','');
+ var art = prompt('미술 성적 입력','');
+ 
+ if(korean < 0 || korean > 100 || english < 0 || english > 100 || math < 0 || math> 100 || science < 0 || science > 100 || art < 0 || art > 100){
+	 document.write('성적은 0부터 100사이만 입력하세요');
+ }else{
+	 score.push(Number(korean),Number(english),Number(math),Number(science),Number(art));
+	 document.write('총점 : ' + getSum() + '<br>');
+	 document.write('평균 : ' + getAvg());	 
+ }
+
+</script>
+</body>
+</html>

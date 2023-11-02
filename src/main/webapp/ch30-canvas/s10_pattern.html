@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Canvas</title>
+<script type="text/javascript">
+window.onload = function(){
+	let canvas = document.getElementById('canvas');
+	if(canvas.getContext){ //getContext(메서드) -> 존재하면 truen / 존재x -> false
+		let context = canvas.getContext('2d');
+		
+		let img = new Image();
+		img.src = '../files/pattern.png';
+		img.onload = function(){
+			//pattern 인식시키기 (색을 칠해준다는 개념으로 생각하면 됨)
+			//이미지 반복 지정(repeat, repeat-x, repeat-y, no-repeat 으로 지정 가능)
+			let pttn = context.createPattern(img,'repeat');
+			context.fillStyle = pttn; // 생성한 패턴을 색상으로 지정
+			context.fillRect(0,0,300,500);
+		};
+		
+	}else{
+		alert('브라우저가 캔버스를 지원하지 않습니다.');
+	}
+};
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가변인자 함수</title>
+</head>
+<body>
+<script type="text/javascript">
+	function test(){
+		/*
+		가변인자 함수: 매개 변수를 선언된 형태와 다르게 사용했을 때도 매개 변수를 모두 활용하는 함수
+					자바스크립트의 모든 함수는 내부에 자동으로 변수 arguments를 갖음
+		변수 arguments: 매개 변수의 배열 
+		*/
+		for(let i=0;i<arguments.length;i++){
+			document.write('arguments[' + i + ']:' + arguments[i] + '<br>');
+		}
+	}
+	//함수 호출
+	test(10); // arguments[0]:10
+	document.write('---------------------<br>');
+	test(10,20); // arguments[0]:10	arguments[1]:20
+	document.write('---------------------<br>');
+	test(10,'자동차');
+	document.write('---------------------<br>');
+	
+</script>
+</body>
+</html>
+<!-- 
+가변인자
+자바 -> sum(int ... a){}
+자바 스크립트 -> 
+function test(){ <- 위에서 명시하는 매개변수: 사용자가 직접 명시해서 사용
+	{} 안에 명시하는 매개변수 -> 자동으로 변수 arguments를 가져서 차곡차곡 쌓임 , 이걸 사용할 수도 있음 //내부에 만들어지는 가변인자 함수가 있다!!!
+}
+
+쉽게 말하면 배열같은거임
+test(10, 20, 자동차) 을 넣으면 arguments[0]=10 arguments[2]=20 arguments[3]=자동차 이런 느낌
+자료형이 달라도 섞어서 넣을 수 있는 가변인자(배열) 이라고 생각하면 됨 자바랑 형식이 좀 다른거임
+근데 자료형이 다르면 활용도가 떨어지니 같은 자료형만 넣어서 작업함
+ -->

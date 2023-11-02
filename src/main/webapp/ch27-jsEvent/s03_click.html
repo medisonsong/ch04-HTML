@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>click 이벤트</title>
+<script type="text/javascript">
+	function changeColor(color){
+		document.body.style.backgroundColor = color;
+	};
+</script>
+</head>
+<body>
+												<!-- 클릭하면 backgroundcolor가 lightblue로 변경되게 -->
+	<input type="radio" name="color" value="blue" onclick="changeColor('lightblue')">파랑색
+	<input type="radio" name="color" value="green" onclick="changeColor('lightgreen')">녹색
+	<input type="radio" name="color" value="white" onclick="changeColor('white')">흰색
+	<!-- radio는 단일 선택을 하면서 한번 선택하면 해제를 못함  -->
+</body>
+</html>

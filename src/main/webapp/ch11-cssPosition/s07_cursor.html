@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마우스 커서 모양 제어</title>
+<style type="text/css">
+	a{ /* I 모양의 커서를 ? 모양으로 바꾸기 */
+		cursor:help; /*--> 링크 클릭하려는 커서에 물음표가 생김*/
+	}
+	h1{ /* 손 모양의 커서를 이미지로 바꾸기 */
+		/*url 명시 후에 auto 또는 기본적으로 지원하는 커서값을 넣어줘야 함*/
+		cursor:url('../files/cursor-01.png') 20 20, crosshair;
+		/*20 20 > x,y좌표값 (커서가 보이는 위치) // crosshair > 기본적으로 지원하는 커서 값(형식적으로 넣어야함) */
+	}
+	span{ /* I 모양의 커서를 손모양으로 바꾸기 */
+		cursor:pointer;
+	}
+</style>
+</head>
+<body>
+<a href="https://www.naver.com">네이버</a>
+<h1>하하</h1>
+<span>서울</span>
+</body>
+</html>

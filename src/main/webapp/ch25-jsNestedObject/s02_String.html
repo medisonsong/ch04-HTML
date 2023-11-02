@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	let msg = new String('하하'); // 처음 이렇게 만들려고 의도했는데 너무 불편해서 안씀
+	let msg = '호호'; //이게 더 편하기 땜시롱
+	*/
+	
+	//String의 속성
+	//1. 문자열의 길이 측정 (자바는 length가 메서드인데 자바스크립트는 속성임)
+	let characters = prompt('사용할 비밀번호를 입력하세요.','6글자 이상');
+	
+	if(characters.length < 6){
+		document.write('6글자 이상으로 입력하세요');
+	}else{
+		document.write('참 잘했어요!!');
+	}
+	
+</script>
+</body>
+</html>

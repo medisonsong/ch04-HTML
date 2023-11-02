@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 제거</title>
+</head>
+<body>
+<script type="text/javascript">
+	//객체 정의
+	const product = {};
+	
+	//객체에 속성 추가
+	product.이름 = '건조기';
+	product.가격 = 20000;
+	product.색상 = '흰색';
+	product.제조사 = 'LG';
+	
+	//toString() 메서드 추가
+	product.toString = function(){
+		let output = '';
+		for(let key in this){
+			if(key != 'toString'){
+				output += key + ' : ' + this[key] + '<br>';
+			}
+		}
+		return output; // toString은 무조건 데이터를 반환하게끔 만들기 때문에 꼭 return문으로 만등어야함
+	};
+	
+	//출력
+	document.write(product); //.toString()을 해도 됨
+	document.write('----------------------------<br>');
+	
+	//속성 제거 (배열에 있던 delete 키워드 똑같이 사용)
+	delete product.제조사;
+	document.write(product);
+	document.write('----------------------------<br>');
+	
+</script>
+</body>
+</html>

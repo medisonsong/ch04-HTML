@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자 엔티티</title>
+</head>
+<body>
+<h3>문자 엔티티</h3>
+<!-- 
+문자 엔티티
+&nbsp;		공백 // 근데 코드가 너무 더러워져서 실제로는 nbsp를 여러 개 붙여서 많이 쓰진 않음 (하나 정돈 씀!)
+&lt;		<
+&gt;		>
+&amp;		&
+&quot;		"
+&copy;		copyright 표시
+&trade;		trademark의 약자
+ -->
+
+공백 처리: 공백 사용 시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 공백으로 보여짐 <br>
+&lt;하하&gt; <br> <!-- [출력화면]		<하하> // 엔티티를 사용하지 않고 <하하> 라고 입력하면 문법적인 에러임 (근데 브라우저에 표시되긴 함) -->
+자바 &amp; JSP <br> <!-- [출력화면]			자바 & JSP -->
+&quot;즐거운 하루&quot;<br> <!-- [출력화면]		"즐거운 하루" -->
+
+&copy; 한국상사<br> <!-- [출력화면]		© 한국상사 -->
+오메가&trade; <!-- [출력화면]		오메가™ -->
+
+</body>
+</html>

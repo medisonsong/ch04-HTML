@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+	//함수의 종류는 여러 갠데 지금은 두 가지만 확인할거임 1. 선언적 함수 2. 익명 함수
+	
+	//1. 선언적 함수
+	function check(){ //check: 함수명
+		document.write('호출하면 동작함<br>');
+	}
+	//함수 호출
+	check(); //인자가 없어도 ()를 꼭 넣음!
+	
+	//1-1) 인자값이 있는 선언적 함수 
+	function check2(msg){ //인자 명시할 땐 인자 앞에 var를 명시하면 오류 발생
+		document.write(msg + '을 좋아합니다' + '<br>');
+	}
+	//함수 호출
+	check2('가을');
+	
+	//1-2) return값(반환값)이 있는 선언적 함수 
+	function check3(num){
+		return num*num;
+	}
+	//함수 호출
+	var number = check3(10); 
+	document.write('number : ' + number + '<br>');
+	
+	
+	
+	
+	//2. 익명 함수 (이름이 없음) -> 이름이 없어서 호출을 못하기 때문에 변수에 대입해서 사용
+	var play = function(){ // 이 문장을 한 라인으로 인식하기 때문에 ; 필수
+		document.write('운동을 좋아해요~~<br>');
+	};
+	//함수 호출 (앞에 있는 변수명, 뒤에 있는 ()를 가져와서 함수 호출을 함 / 변수명을 가져다 씀)
+	play();
+	
+	//2-1) 인자값이 있는 익명 함수
+	var play2 = function(item){
+		document.write(item + '를 좋아해요<br>');
+	};
+	//함수 호출
+	play2('축구');
+	
+	//2-2) 반환값이 있는 익명 함수
+	var play3 = function(x,y){
+		return x + y;
+	};
+	//함수 호출
+	var result = play3(5,8);
+	document.write('result = ' + result + '<br>');
+	
+	
+	
+	
+	//코드가 길면 함수를 만들고 onclick (이벤트속성)에 함수를 넣으면 됨
+	//정의한 함수를 인라인 방식으로 호출하기
+	function checkIt(){
+		alert('인라인 방식으로 함수 호출하기');
+	}
+	
+</script>
+</head>
+<body>
+	<input type="button" value="확인" onclick="checkIt()">
+
+</body>
+</html>

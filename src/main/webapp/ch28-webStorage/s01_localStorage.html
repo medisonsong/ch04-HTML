@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로컬 스토리지</title>
+<script type="text/javascript">
+/*
+ 로컬 스토리지 : 브라우저를 통해 사용자의 컴퓨터에 데이터를 지속적으로 저장할 수 있는 공간
+ 			다시 사이트를 방문했을 때 로컬 스토리지에 저장된 모든 데이터를 사용 가능 (웹사이트에 접근해야지만 데이터를 사용할 수 있음)
+ */
+ 
+ window.onload=function(){
+	//save 이벤트 연결 (로컬 스토리지에 저장)
+	let save = document.getElementById('save');
+	save.onclick = function(){
+		let text = document.getElementById('text');
+		//로컬 스토리지에 데이터 저장
+//		localStorage.setItem('name',text.value); //key랑 value를 같이 넣어줘야함
+		localStorage.name = text.value; //이렇게도 생성 가능
+		
+		//초기화 (정상적으로 처리가 됐으면 데이터를 비우는거임)
+		text.value = '';
+	};
+	//load 이벤트 연결 (로컬 스토리지에 저장되어 있는 데이터 읽어오기)
+	let load = document.getElementById('load');
+	load.onclick = function(){
+		//로컬 스토리지에 저장된 데이터 읽기
+		let loadedName = localStorage.getItem('name');
+		
+		alert('localStorage 객체에 저장된 이름 : ' + loadedName);
+	};
+ };
+ 
+</script>
+</head>
+<body>
+<input type="text" id="text"><br>
+<button id="save">저장</button>
+<button id="load">불러오기</button>
+</body>
+</html>
+<!-- 
+text칸에 이름 넣고 저장 누르고 없어지면 저장된거임
+검사> application> local Storage 보면
+
+key			value
+name		홍길동
+
+이라고 저장되어 있음
+ -->

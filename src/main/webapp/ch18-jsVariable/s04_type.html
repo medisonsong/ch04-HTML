@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 자료형</title>
+</head>
+<body>
+<script type="text/javascript">
+	//변수 선언 및 초기화
+	var numberVar = 273; //숫자
+	var stringVar = '서울'; //문자형
+	var booleanVar = true; //논리값(boolean)
+	
+	//typeof 변수명 : 해당 변수에 저장된 데이터의 타입을 알아내는 연산자
+	document.write('numberVar : ' + typeof numberVar + '<br>'); //numberVar : number
+	document.write('stringVar : ' + typeof stringVar + '<br>'); //stringVar : string
+	document.write('booleanVar : ' + typeof booleanVar + '<br>'); //booleanVar : boolean
+
+	/*함수: 독립적으로 사용하는 것
+		자바 - 함수 x / 클래스안에 들어가는 메서드 o
+		JS  - 함수 o / 메서드 o
+	*/
+	
+	var functionVar = function(){}; // --> 함수 (변수에 함수의 구조 대입) / (){}
+	var objectVar = {}; // --> 객체 / {} / 자바-[]
+	var arrayVar = []; // --> 배열 / [] / 자바-{}
+	
+	document.write('functionVar : ' + typeof functionVar + '<br>'); //functionVar : function
+	document.write('objectVar : ' + typeof objectVar + '<br>'); //objectVar : object
+	document.write('arrayVar : ' + typeof arrayVar + '<br>'); //arrayVar : object -> 자바와 마찬가지로 배열을 객체로 인식하기 때문에 object라고 나옴
+	
+</script>
+</body>
+</html> 
+<!-- 
+정수/실수=number, 문자/문자열=string, 논리형=boolean
+객체 {} 배열 [] -> 자바랑 반대
+함수 function(){}
+ -->

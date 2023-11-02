@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery UI</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<style type="text/css">
+#draggable{width:100px;height:100px;padding:0.5em;float:left;margin:10px 10px 10px 0;}
+#droppable{width:150px;height:150px;padding:0.5em;float:left;margin:10px;}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#draggable').draggable(); //네모칸 드래그 가능해짐
+	$('#droppable').droppable({//옵션값을 지정해야함 (들어갔을 때/빠져나갔을 때 이벤트)
+		drop:function(event,ui){//drop영역에 진입 / event,ui 인자 모두 가능
+			$(this).addClass('ui-state-highlight')
+				   .find('p')
+				   .html('Dropped!'); //p태그의 내용제어 - Dropped!라고 변경
+		}, 
+		out:function(event,ui){//drop영역을 벗어날 때
+			$(this).removeClass('ui-state-highlight')
+				   .find('p')
+				   .html('Drop here');
+		}
+	}); 
+});
+</script>
+</head>
+<body>
+	<div id="draggable" class="ui-widget-content">
+		<p>Drag me to my target</p>
+	</div>
+	
+	<div id="droppable" class="ui-widget-header">
+		<p>Drop here</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>let</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	ES6에서 변수를 정의하는데 let를 사용할 수 있고, 상수를 정의하는 데는 const를 사용할 수 있음
+	이들은 블록 레벨 스코프임 (메모리 절약 가능)
+	*/
+	
+	for(let i=1;i<=3;i++){ //지역변수 (블록 레벨 스코프)
+		document.write(i + '<br>'); 
+	}
+	// document.write(i); //제어문 블록을 벗어나서 소멸됨 (i is not defined)
+	document.write('---------------------<br>');
+	
+	let i = 10; //전역변수
+	document.write('전역변수 : ' + i + '<br>');
+	
+	function test2(){
+		let i = 20; // 지역변수 우선
+		document.write('지역변수 : ' + i + '<br>');
+	}
+	//함수 호출
+	test2();
+	
+	//지역변수 let i는 소멸, 전역변수 i 호출됨
+	document.write(i); // 10
+		
+</script>
+</body>
+</html>
+
+<!-- 
+let는 항상 지역변수다? X
+블럭 안에서 명시 -> 지역변수
+블럭 밖에서 명시 -> 전역변수
+
+let가 이런 기능을 가지고 있기 때문에 요즘은 거의 var보다 let를 많이 사용함
+ -->

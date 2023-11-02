@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	변수명의 정의
+	1. 키워드(예약어)를 사용하면 안 된다.
+	2. 숫자로 시작하면 안 된다.
+	3. 특수 문자는 _와 $만 허용
+	4. 공백 문자를 포함할 수 없다.
+	
+	식별자를 잘못 지정한 예
+	ex) break		-> 키워드 사용
+		10alpha		-> 숫자로 시작
+		#num		-> 지정되지 않은 특수문자 사용
+		has space	-> 공백 포함
+		
+	식별자의 의미를 더 명확하게 하기 위해 사용하는 규칙
+	1. 생성자 함수의 이름은 항상 대문자로 시작 (객체 배울 때 생성자 함수 사용함)
+	2. 변수, 인스턴스, 함수, 메서드의 이름은 항상 소문자로 시작
+	3. 여러 단어로 이루어진 식별자는 각 단어의 첫 글자를 대문자로 함
+	*/
+	
+	/*변수 선언
+		java: 자료형+변수명 나열 (ex int a)
+		js: 처음 변수 선언 시 자료형이 아예 없음! 값을 넣는 순간 동적으로 자료형이 결정되는 형태 // 그래서 명시할때 variable 명시 (var)
+	*/
+	var num;
+		
+	//변수에 값을 할당
+	num = 123; 
+	
+	//출력 
+	document.write('num = ' + num);
+	document.write('<br>')
+	
+	//변수를 선언하지 않고 출력
+	//alert(num2); // 위 문장은 정상적으로 실행되기 때문에 창은 뜨는데 콘솔로 가보면 오류 발생한걸 확인할 수 있음 (검사> 콘솔- num2 is not defined)
+	
+	//변수 선언 후 값을 할당하지 않고 출력
+	var num3;
+	
+	document.write('num3 = ' + num3); //undefined라고 정상 출력, 오류가 발생한건 아닌데 정의된게 아니라고 나옴
+	document.write('<br>');
+	
+	//두 개 이상의 변수를 한 번에 선언
+	var a, b;
+	
+	a=10;
+	b=5;
+	
+	document.write('a + b = ' + (a+b));
+	document.write('<br>');
+	
+	//변수 선언과 초기화를 동시에 수행
+	var c=10, d=3.5; //var가 자료형을 말하는게 아니라서 동시에 나열해도 됨 (js의 자료형은 정수/실수 구분없이 다 number임)
+	
+	document.write('c + d = ' + (c+d));
+	document.write('<br>');
+	
+	//한글을 사용해서 변수 선언 (가능은 한데 안 씀)
+	var 번호 = 3;
+	document.write('번호 = ' + 번호);
+	
+</script>
+</body>
+</html>

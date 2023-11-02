@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열의 요소 삭제</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	//lengt를 제어해서 delete (length 변동 O)
+	const array = ['one','two','three'];
+				//	0		1	2			length=3
+	array.length = 2; //마지막 데이터 제거
+	//배열의 요소 목록
+	document.write(array + '<br>'); //one,two
+	
+	array.length = 4; //길이가 증가함
+	document.write(array + '<br>'); //one,two,,
+	document.write('-----------------<br>');
+	
+	
+	//delete를 이용해서 delete (length 변동 X)
+	const array2 = ['포도', '사과', '귤'];
+				//	  0		1	  2
+	delete array2[1]; //제거한 위치에 빈 요소를 남김
+	document.write(array2 + '<br>'); //포도,,귤
+	document.write('-----------------<br>');
+	
+	
+	
+	//splice를 이용해서 delete (length 변동 O)
+	const array3 = ['포도', '사과', '귤', '망고'];
+				//	 0		1	   2	3
+	array3.splice(2,1); // index[2]에 해당하는 요소부터 1개의 요소를 제거하고 
+						// 인덱스의 길이를 변동 시킴
+	document.write(array3 + '<br>'); //포도,사과,망고
+	
+</script>
+</body>
+</html>

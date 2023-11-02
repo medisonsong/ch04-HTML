@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가위바위보</title>
+<style type="text/css">
+body{
+	font-family:sans-serif;
+}
+h1{
+	text-align:center;
+}
+div#game{
+	width:480px;
+	margin:0 auto;
+	text-align:center;
+}
+/*결과 이미지 스타일*/
+div.result-img{ /*컴퓨터, 사용자 둘다 적용*/
+	position:relative;
+	width:220px;
+	float:left;
+} 
+div.result-img:first-child{ /*컴퓨터 스타일*/
+	text-align:right;
+}
+div.result-img:last-child{ /*사용자 스타일*/
+	text-align:left;
+}
+div.result-img span{
+	font-size:20px;
+	font-weight:bold;
+	border-radius:20px;
+	width:120px;
+	text-align:center;
+	background-color:#f4f2c6;
+	position:absolute;
+	top:25%;
+	left:20%;
+}
+.user-option{
+	cursor:pointer;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	//computer, user가 선택한 이미지(값)을 표시할 이미지 (div class중에 result-img 하위에 있는 img)
+	let gameImage = document.querySelectorAll('.result-img img'); // querySelectorAll > 배열로 인식
+	
+	let userOption = document.getElementsByClassName('user-option');
+	//이벤트 연결
+	for(let i=0;i<userOption.length; i++){
+		userOption[i].onclick=function(){
+			//computer가 선택한 값 
+			let com_answer = Math.floor(Math.random()*3); // 0가위,1바위,2보 (Math.random()하면 난수가 소수점이하로 계속 만들어지니까 절삭해야함)
+			//computer가 선택한 이미지 표시하기
+			gameImage[0].style.display = '';
+			gameImage[0].src = '../files/timg' + com_answer + '.png';
+			
+			//user가 선택한 값
+			let user_answer = this.id.substr(3); //012 (3)<< / this=이벤트가 발생한 태그(onclick 이벤트가 발생한 태그니까 img.id 3글자부터 읽어옴) img 123 부분
+			//user가 선택한 이미지 표시하기
+			gameImage[1].style.display='';
+			gameImage[1].src = '../files/timg' + user_answer + '.png';
+			
+			//가위바위보 결과
+			/*
+			컴퓨터 사용자 컴-사	결과(com기준)
+			0		0	0	무
+			0		1	-1	패
+			0		2	-2	승
+			-------------------
+			1		0	1	승
+			1		1	0	무
+			1		2	-1	패
+			-------------------
+			2		0	2	패
+			2		1	1	승
+			2		2	0	무
+			-------------------
+			승: -2,1
+			패: -1,2
+			무: 0
+			*/
+			
+			let result;
+			let num = com_answer - user_answer; //결과를 위한 연산
+			
+			if(num == 0){
+						//컴퓨터,사용자
+				result = ['무','무']; // 배열로 [컴퓨터, 인간] 결과
+			}else if(num == -2 || num == 1){
+				result=['승','패'];
+			}else if(num==-1 || num==2){
+				result=['패','승'];
+			}
+			
+			//span태그 두군데에 표시 (승, 무만 표시/ 패는 x)
+			let showResult = document.querySelectorAll('.result-img span');
+			
+			for(let i=0;i<showResult.length;i++){ //span태그가 두개라서 두번 루프 돌면서 결과 출력
+				if(result[i] == '패'){ //패만 안보이게 할거라서 none
+					gameImage[i].width=100;
+					showResult[i].style.display = 'none';
+				}else{
+					gameImage[i].width=200;
+					showResult[i].style.display = '';
+				}
+				showResult[i].innerHTML = (i == 0 ? '컴퓨터 ' : '사용자 ') + result[i]; //showResult[0]=컴퓨터 [1]=사용자 / 그래서 컴퓨터 승 이런식으로 표시 
+			};
+			
+		};
+	};
+};
+</script>
+</head>
+<body>
+	<h1>가위바위보 게임</h1>
+	<div id="game">
+		<div>
+			<img class="user-option" id="img0" src="../files/timg0.png" width="90">
+			<img class="user-option" id="img1" src="../files/timg1.png" width="90">
+			<img class="user-option" id="img2" src="../files/timg2.png" width="90">
+		</div>
+		<div>
+			<div class="result-img"><img style="display:none;" alt="컴퓨터"><span></span></div> <!-- span에 승무패 명시 -->
+			<div class="result-img"><img style="display:none;" alt="사용자"><span></span></div>
+		</div>
+	</div>
+</body>
+</html>

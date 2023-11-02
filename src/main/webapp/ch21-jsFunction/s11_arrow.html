@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>화살표 함수</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	ES6에서 도입된 화살표 함수(arrow function/ 요즘 많이 사용)은 function 키워드 대신 화살표(fat arrow =>)를
+	사용해 좀 더 간략한 방법으로 함수를 선언할 수 있다.
+	화살표 함수는 익명 함수로 정의한다. (== 익명 함수의 변형이라는 뜻)
+	*/
+	
+//화살표 함수로 바꾸는 법
+let print = (x)=>{ // 익명함수> let print = function(x) , function부분을 =>로 바꾸고 뒤로 넘김
+	document.write(x);
+};
+print(10);
+document.write('<br>----------<br>');
+
+
+
+let print2 = (x)=>{ // print2 = function(x)
+	return x + 10;
+};
+document.write(print2(20));
+document.write('<br>----------<br>');
+
+
+
+//인자가 하나일 경우 ()를 생략할 수 있음
+let print3 = x=> { //print3 = function(x)
+	return x * 10;
+};
+document.write(print3(30));
+document.write('<br>----------<br>');
+
+
+
+//인자가 2개인 경우는 () 생략 불가능
+let multi = (x,y) => {return x*y;}; //코드 구문이 return처럼 한줄밖에 없을 경우 줄바꿈 없이 해도 됨
+			//근데 이렇게 return x*y; 밖에 없을 때 더 축약 할 수 있음
+document.write(multi(3,6));
+document.write('<br>----------<br>');
+
+
+
+//코드 한 줄 축약
+//중괄호를 생략하고 아래와 같이 명시하면 (x,y)=>{return x+y;}와 같이 동작함
+let add = (x,y)=>x+y; //(x,y)=>{return x+y}; 에서 {}+return 생략 가능 (중괄호를 생략하면 자동으로 return도 생략된다고 간주함)
+document.write(add(2,5));
+
+
+
+//코드가 한 줄이지만 축약할 수 없는 경우
+//{}를 생략할 수 없음. 만약 중괄호를 생략하면 {return let x = 10;}로 인식하기 때문에 에러 발생
+//let print4 = () => let x = 10; // 본래 문장: let print4 = ()=>{let x = 10;} - 얘는 return문장이 아니기 때문에 중괄호 없애면 에러남 
+
+
+
+
+</script>
+</body>
+</html>

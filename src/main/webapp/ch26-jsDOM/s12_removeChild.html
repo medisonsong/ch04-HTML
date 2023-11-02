@@ -1,0 +1,34 @@
+<!-- setTimeout을 이용해서 3초 지나면 header1을 없애려고 함 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 제거</title>
+<script type="text/javascript">
+window.onload = function(){
+	let willRemove = document.getElementById('will_remove');
+	
+	//3초 후에 함수 호출
+	setTimeout(function(){
+		//문서 객체 제거
+//		document.body.removeChild(willRemove); //부모-자식을 다 명시해야해서 body.removeChild(제거할이름)
+
+		//문서 객체의 하위 요소를 모두 제거
+		document.body.innerHTML = '';
+		
+	},3000);
+};
+</script>
+</head>
+<body>
+	<h1 id="will_remove">Header</h1>
+	<h1>Header2</h1>
+</body>
+</html>
+<!-- 
+삭제하는 방법
+1) 부모 입장에서 자식을 삭제 (문서 객체 제거)
+2) 문서 객체의 하위 요소 모두 빈 문자열로 대체 (문서 객체의 하위 요소를 모두 제거)
+
+css가 아니라 자바스크립트로 화면을 동적으로 바꿀 수도 있음
+ -->

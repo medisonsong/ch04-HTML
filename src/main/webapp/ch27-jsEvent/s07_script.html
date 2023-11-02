@@ -1,0 +1,43 @@
+<!-- 이벤트를 인라인 방식이 아닌 태그 바깥에 정의하고 스크립트에 이벤트를 연결해서 사용해보기 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스크립트에서 이벤트 연결</title>
+<style type="text/css">
+div{
+	background-color:yellow;
+}
+</style>
+<script type="text/javascript">
+//윈도우가 로드될 때 호출
+window.onload = function(){
+	let header = document.getElementById('header');
+	
+	//이벤트 핸들러 정의
+	function whenClick(){
+		alert('CLICK');
+	}
+	
+	//이벤트 연결 (header에 onclick(이벤트속성)을 넣고 이벤트 핸들러를 연결)
+	//	   이벤트속성		이벤트핸들러
+	header.onclick = whenClick;
+	
+//	header.onclick = whenClick(); / 페이지 실행 시 한 번 실행 후 이벤트 연결을 하지 못함
+
+};
+</script>
+</head>
+<body>
+	<div id="header">클릭</div>
+</body>
+</html>
+<!-- 
+이벤트 연결 시
+header.onclick = whenClick; 여기서 이벤트명만 명시해야 하는데 이벤트명 뒤에 ()를 넣으면
+메서드처럼 한번 호출되고 사라짐 (잘못 연결됨) - 꼭 이벤트명만 명시해야함
+
+근데 만약에 코드 구문이 길고 복잡하다면
+선언적 함수를 만들고 이벤트를 만든다면 실수도 많고, 코드 직관적으로 이해하기가 힘듦
+그래서 익명함수 형태로 바로 대입하고 넣는 게 좋음 (비교적 코드도 짧아짐)
+ -->

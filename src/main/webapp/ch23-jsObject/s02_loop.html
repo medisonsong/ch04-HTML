@@ -1,0 +1,39 @@
+<!-- 객체를 반복문을 이용해서 속성을 읽어보자 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문을 이용해서 객체의 속성 읽기</title>
+</head>
+<body>
+<script type="text/javascript">
+	//객체 정의 (객체도 배열처럼 빈 상태로 정의하고 속성을 추가할 수 있음(동적임))
+	const product={
+			//속성(key:value)
+			name:'eclipse',
+			price:'10,000원',
+			language:'한국어',
+			supportOS:'win10',
+			subscription:true
+	}; 
+	
+	//반복문을 이용한 속성 읽기
+	for(let key in product){ // product로부터 문자열로 key를 받아서 (name, price, ..)
+	
+		//for in 반복문을 이용해서 속성에 접근할 때는 객체로부터 key를
+		//문자열로 반환받기 때문에 객체명[문자열 key] 형식으로 호출해서 속성에 접근할 수 있음
+		document.write(key + ':' + product[key] + '<br>'); //name:eclipse ~
+	};
+
+</script>
+</body>
+</html>
+<!-- 
+자바는 못하지만 자바 스크립트는 반복문을 통해서 객체 값을 읽어올 수 있다
+
+document.write(key + ':' + product[key] + '<br>'); 
+여기서 product[key]가 아닌 product.key 라고 명시하게 되면
+product 객체 안에 있는 key값이 key인 값을 찾기 때문에 오류가 남 (key를 문자열로 인식)
+
+그렇기 때문에 product[key]라고 명시해서 접근해야함
+ -->

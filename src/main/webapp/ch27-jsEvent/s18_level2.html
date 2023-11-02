@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표준 이벤트 모델</title>
+<script type="text/javascript">
+/*
+ DOM Level2 표준 이벤트 모델
+ addEventListener(eventType,eventHandler,useCapture) : 이벤트 연결
+ removeEventListener(eventType,eventHandler): 이벤트 제거
+ */
+ //onload역시 속성임
+ 
+ //윈도우가 로드될 때 호출
+ window.addEventListener('load',function(){
+	 let header = document.getElementById('header');
+	 //이벤트 연결
+	 header.addEventListener('click', function(){
+		alert('CLICK'); 
+	 },false); // false생략해도 동작 상 문제는 없긴 함
+ },false);
+ 
+</script>
+</head>
+<body>
+	<h1 id="header">Click</h1>
+</body>
+</html>
+<!-- 
+표준 이벤트 모델
+점차 확산
+
+메서드에 매개변수로 이벤트 핸들러를 넣어서 하는거..?
+ -->

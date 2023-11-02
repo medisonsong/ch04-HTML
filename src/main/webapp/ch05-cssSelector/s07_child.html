@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자식 선택자(직계 자식만을 의미함)</title>
+<style type="text/css">
+/* 지정한 자식 태그만 선택 */
+body > div{border:3px solid blue;}
+</style>
+
+</head>
+<body>
+	<div>
+		<ul>
+			<li>사과</li> 
+			<li>바나나</li>
+			<li>포도</li>
+			<li>멜론</li>
+		</ul>
+		<div>하늘</div> <!-- 안에 한 번 더 명시됐지만 그냥 합쳐져서 하나의 칸으로 선택됨 -->
+	</div>
+	<p>
+		<span>하하</span>
+	</p>
+</body>
+</html>

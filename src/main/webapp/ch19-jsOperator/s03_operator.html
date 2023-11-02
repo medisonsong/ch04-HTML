@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>논리연산자</title>
+</head>
+<body>
+<script type="text/javascript">
+/* 
+ <자바랑 같은 논리 연산자>
+ ! 	논리 부정 연산자
+ && 논리곱 연산자
+ ||	논리합 연산자
+ */
+ 
+ var a = true && false; // true=선조건 false=후조건 / &&> 선조건이 true일 경우 후조건을 보는 것은 자바랑 같음 
+ document.write('true && false : ' + a + '<br>'); //false
+ 
+ var b = true || false; // ||> 선조건이 true일 경우 후조건 안 봄
+ document.write('true || false : ' + b + '<br>'); //true
+ 
+ var c = !true;
+ document.write('!true : ' + c + '<br>'); //false
+
+ //js는 자바와 달리 true, false 외에도 숫자를 논리값으로 쓸 수 있음 
+ //0일 경우 false, 0이 아닌 값 true
+ 
+ document.write('------------------------------------------------<br>');
+ 
+ var d = 1, e = 0, f;
+ 
+ f = d && e;
+ document.write('d && e : ' + f + '<br>'); // 0 (d=true, e=false 로 인식 -> true && false로 계산함)
+ 
+ f = d || e;
+ document.write('d || e : ' + f + '<br>'); // 1 (만약 d에 5를 넣으면 결과값 5가 나옴> d값이 true의 개념으로 사용되기 때문에 e를 안보고 그냥 d출력)
+ 
+ f = !d;
+ document.write('!d : ' + f + '<br>'); //false
+ 
+</script>
+</body>
+</html>

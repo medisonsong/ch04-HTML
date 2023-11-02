@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ [실습] 
+ 빈 배열에 정수를 저장하고, 배열에 저장된 요소의 최대값과 최소값을 출력하시오. 배열명=score
+ [입력 예시] prompt를 이용해서 5개의 정수 입력 (개수 제한 x)
+ [출력 예시]
+ 배열에 저장된 숫자 : 10,9,7,23,15 (쉼표로 나열)
+ 최대값 : 23
+ 최소값 : 7
+ */
+ 
+ const score = [];
+ 
+ for(let i=1; i<=5; i++){
+	 score.push(Number(prompt(i + '번째 숫자 입력 : ', '')));
+	 }
+ 
+ //max, min에 기준값 설정
+ let max = score[0], min = score[0];
+ 
+ //4번 루프
+ for(let i=1; i<score.length; i++){
+	 	if(max < score[i]){
+			 max = score[i];
+		 }
+		 if(min > score[i]){
+		  min = score[i];
+		  }
+	}
+
+ document.write('배열에 저장된 숫자 : ' + score + '<br>');
+ document.write('최대값 : ' + max + '<br>');
+ document.write('최소값 : ' + min + '<br>');
+ 
+ /*
+ //for in 반복문 (5번 루프)
+ for(let i in score){
+	 if(max < score[i]){
+		 max = score[i];
+	 }
+	 if(min > score[i]){
+	  min = score[i];
+	  }
+ }
+ 
+ //for each 반복문  (5번 루프)
+ score.forEach(function(element,index,array){
+	if(max<elemenet){
+		max = element;
+	}
+	if(min>element){
+		min = element;
+	}
+ });
+ */
+</script>
+</body>
+</html>

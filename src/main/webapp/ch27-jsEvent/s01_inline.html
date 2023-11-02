@@ -1,0 +1,19 @@
+<!-- 이벤트 처리 - 인라인 방식 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인라인 이벤트 처리</title>
+</head>
+<body>
+<input type="button" value="이동" onclick="location.href='https://www.naver.com'">
+<input type="button" value="확인" onclick="alert('클릭');alert('click')">
+</body>
+</html>
+<!-- 
+onclick="location.href='https://www.naver.com'"
+이벤트속성			이벤트핸들러(자바스크립트 코드)
+
+이벤트 핸들러에 여러 개의 코드를 명시할 수 있음 (;이 구분자) // 좋은 방법은 아님
+보통 이벤트를 인라인으로 처리하는 것보다 스크립트 태그에서 쓰는걸 권장
+ -->

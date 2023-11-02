@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<style type="text/css">
+div{
+	margin:5px;
+	padding:5px;
+	border-width:3px;
+	border-style:solid;
+	border-color:black;
+	border-radius:10px;
+}
+</style>
+<!-- CDN[Contents Delivery Network] 방식 : URL을 통해 js파일 연결-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//이벤트 연결
+		//		이벤트타입,이벤트핸들러
+	$('div').on('click',function(){
+		//이벤트가 발생한 태그의 하위 태그 중 h1태그
+		let header = $('h1',this).text() // $('하위태그',this)
+		//이벤트가 발생한 태그의 하위 태그 중 p태그
+		let paragraph = $('p',this).text();
+		
+		alert(header + '\n' + paragraph);
+	});
+}); 
+
+</script>
+</head>
+<body>
+	<div>
+		<h1>Header1</h1>
+		<p>Paragraph1</p>
+	</div>
+	<div>
+		<h1>Header2</h1>
+		<p>Paragraph2</p>
+	</div>
+	<div>
+		<h1>Header3</h1>
+		<p>Paragraph3</p>
+	</div>
+</body>
+</html>
+<!-- 
+onclick X
+click 이라고 하고 넣어야함
+
+제이쿼리는 현재 태그에는 연결 가능한데 동적으로 만들어지는 미래 태그에 이벤트 연결은 못함
+on메서드를 이용하면 가능한데 방법이 좀 다름
+ -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자 함수</title>
+</head>
+<body>
+<script type="text/javascript">
+	//생성자 함수 정의
+	function Animal(name,age){
+		//속성 (this 有: 속성/ this 無: 지역/전역변수)
+		this.name = name;
+		this.age = age;
+		//메서드 정의
+		this.eat = function(){
+			document.write('맛있는 먹이를 먹습니다.');
+		};
+	}
+	
+	//생성자 함수를 이용해서 객체 생성
+	const animal = new Animal('비둘기',10);
+	
+	//속성 호출
+	document.write(animal.name + '<br>'); //비둘기
+	document.write(animal.age + '<br>'); //10
+	
+	//메서드 호출
+	animal.eat(); // 맛있는 먹이를 먹습니다.
+	
+</script>
+</body>
+</html>
+<!-- 
+{}로 객체를 생성할 땐 할땐 :으로 값을 명시했는데 (이름:'홍길동')
+생성자 함수를 정의해서 객체를 만들때는 new 키워드를 이용해서 값을 대입해줌 (const animal = new Animal('비둘기',10));
+ -->

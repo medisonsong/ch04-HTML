@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>rotate</title>
+<style type="text/css">
+/*
+transform: 태그의 변형
+속성 값				설명
+rotate(각도)			요소를 지정한 각도만큼 회전시킴
+					각도의 도(degree)를 사용하거나 라디안 값(html5에 자바를 이용해서 그림 배울 때 배울거임)을 사용할 수 있음
+					css는 도를 명시할 수 있으니 그냥 각도로 명시
+*/
+
+.my-photo{
+	position:absolute;
+	left:50px;
+	top:70px;
+	transform:rotate(15deg); /*15도 만큼 회전시킨다, deg 같이 명시*/
+}
+
+</style>
+</head>
+<body>
+<img class="my-photo" src="../files/cross.jpg">
+
+</body>
+</html>
+

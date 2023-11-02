@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>encoding 관련 함수</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+함수 이름						설명 
+escape(url)					적절한 정도로 인코딩함
+unescape(url)				적절한 정도로 디코딩함
+
+encodeURI(url)				최소한의 문자만 인코딩함
+decodeURI(url)				최소한의 문자만 디코딩함
+
+encodeURIComponent(url)		대부분의 문자를 인코딩함
+decodeURIComponent(url)		대부분의 문자를 디코딩함
+*/
+	let URL = 'http://www.naver.com?test=한글입니다.';
+	let output = '';
+	output += '*escape()<br>';
+	output += escape(URL) + '<br><br>'; // //,:,?,한글 등 부호로 변환
+	output += '*encodeURI()<br>';
+	output += encodeURI(URL) + '<br><br>'; // 한글만 부호로 변환 (최소화 인코딩)
+	output += '*encodeURIComponent()<br>';
+	output += encodeURIComponent(URL) + '<br><br>'; // .,알파벳 제외 대부분의 문자 인코딩
+	
+	document.write(output);
+
+</script>
+</body>
+</html>
+<!-- 
+인코딩을 해야하는 순간이 온다면 그냥 그때그때 따라서 프로그램에 맞게 인코딩/디코딩 하면 됨
+함수 마무리
+ -->

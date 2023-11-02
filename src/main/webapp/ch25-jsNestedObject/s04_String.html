@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이메일 체크</title>
+</head>
+<body>
+	<form name="form1">
+																				<!-- 읽기전용 -->
+		id : <input type="text" name="id" placeholder="아이디는 이메일에서 추출" readonly="readonly">
+		email : <input type="text" name="email"> <br>
+		<input type="button" value="입력" onclick="check()"> 
+	</form>
+	<script type="text/javascript"> // 원래는 head에 넣어서 많이 했는데 요즘은 body뒤에(마지막) 넣는 경우도 多
+		function check(){
+			let email = document.form1.email.value;
+			let n = email.indexOf('@'); // abce@test.com 이면 4가 n에 저장
+			if(n > 0){ // @test.com 처럼 @앞에 값이 있어야 true인 조건 넣음
+											//시작인덱스,추출할 문자 개수 (처음부터 n까지의 문자를 추출)
+				document.form1.id.value = email.substr(0,n);
+			}else{
+				document.form1.email.value = '';
+				alert('이메일 형식에 맞게 입력하세요!');
+			}
+			
+	};
+	</script>
+</body>
+</html>
+
+<!-- 
+indexOf
+substr - 시작인덱스, 추출 문자 개수
+ (js는 substring도 있는데 얘는 시작인덱스,끝인덱스)
+ -->

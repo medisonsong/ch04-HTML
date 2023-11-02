@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상클래스 선택자</title>
+<style type="text/css">
+/*
+형식			역할
+:hover		마우스 커서가 링크에 올라가 있는 상태 (많이 지정함)
+:active		마우스 커서를 클릭한 순간부터 놓기 직전까지 상태
+:link		링크를 클릭하지 않는, 그냥 링크되어 있는 상태
+:visited	링크를 눌러 방문한 적이 있는 상태 
+*/
+
+a:link{ /*방문하지 않은 link에 link밑줄 제거하고 색상 변경*/
+	text-decoration: none; /*링크 밑줄 제거, 네이버(방문 有)에는 방문했지만 링크가 걸려있기 때문에 같이 밑줄 제거 됨*/
+	color: rgb(255,102,102) /*rgb색상 사용 가능 // 야후 파란색->빨간색*/
+}
+
+a:visited{
+	text-decoration: none;
+	color: rgb(89,71,71) /*네이버 보라색->갈색*/
+}
+
+a:hover{
+	text-decoration: underline; /*밑줄 생기게 함*/
+	background-color:skyblue;
+}
+
+a:active{
+	text-decoration: underline;
+	color:white;
+	background-color:black;
+}
+
+</style>
+</head>
+<body>
+
+<a href="https://www.naver.com">네이버</a><br>
+<a href="https://www.yahoo.com">야후</a> <!-- 방문한 적 없는 url이라 색이 파란색임 (위 네이버는 보라색) -->
+
+</body>
+</html>

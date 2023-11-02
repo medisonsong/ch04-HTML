@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 속성 지정</title>
+<script type="text/javascript">
+window.onload = function(){
+	let img = document.createElement('img'); //이미지 태그 생성
+	//속성 지정
+	img.src = '../files/Penguins.jpg';
+	img.width = 500;
+	img.height= 350;
+	//노드 연결
+	document.body.appendChild(img); //태그를 만든게 아니라 동적으로 생성한거임
+};
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- 
+img는 text가 없기 때문에 그냥 속성 지정만 하고 바로 노드 연결하면 됨
+text가 있으면 header.appendChild(textNode); 를 적어야함
+
+나쁜 방법은 아니지만 코드가 증가하는 방법임 (그래서 일반적으로 createElement를 선호하진 않음)
+하나의 태그를 만드는건 괜찮은데 table이나 ul 등 여러 개의 태그를 만드는 경우에는 적합하지 않음
+
+여러 개의 태그를 만드는건 innerHTML을 이용해서 하면 좋음
+ -->

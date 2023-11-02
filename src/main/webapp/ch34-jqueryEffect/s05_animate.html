@@ -1,0 +1,51 @@
+<!-- slide up/ down -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<style type="text/css">
+h1{width:50px;height:30px;background-color:red;font-size:100%;}
+h2{width:50px;height:30px;background-color:orange;font-size:100%;}
+h3{width:50px;height:30px;background-color:aqua;font-size:100%;}
+</style>
+<!-- CDN[Contents Delivery Network] 방식 : URL을 통해 js파일 연결-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//animate({애니메이션 속성},효과속도,콜백함수)
+	//애니메이션 속성: 모션으로 적용할 속성을 스타일(CSS)을 이용해서 입력
+	$('h1').animate({
+		marginLeft:'250px' //margin-left인데 여기선 안되니까..!
+	},5000,function(){
+		alert('도착 완료!');
+	});
+	
+	
+	$('h2').animate({
+		marginLeft:'250px',
+		opacity:0.3, //투명도
+		width:'100px',
+		height:'100px'
+	},5000);
+	
+	
+	$('h3').animate({
+		marginLeft:'250px'
+	},3000).animate({ //다시 본인을 호출해서 margin값을 줄여서 다시 줬음 -> 갔다가 다시 돌아오는 것처럼 보임
+		marginLeft:'100px'
+	},2000);
+}); 
+</script>
+</head>
+<body>
+	<h1>내용</h1>
+	<h2>내용</h2>
+	<h3>내용</h3>
+</body>
+</html>
+<!-- 
+margin값을 줘서 (여백을 줘서) 이동하는 것처럼 보이게 만든거임
+
++ css로 속성줘서 h2가 커지면서 달리는데 h3가 밀려나는 것처럼 보임
+ -->

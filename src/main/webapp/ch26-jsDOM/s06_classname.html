@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스를 이용한 문서 객체 탐색</title>
+<script type="text/javascript">
+
+window.onload = function(){
+	let foo = document.getElementsByClassName('matched'); // a b x
+	let output = '[class명이 matched인 모든 태그의 text 출력]\n';
+	
+	for(let i=0; i<foo.length;i++){
+		output += foo[i].innerHTML + '\n';
+	}
+	alert(output);
+	
+	
+	//p태그 접근-> matched (a,b)
+	let foo2 = document.getElementById('foo'); // a b
+	let fooMatched = foo2.document.getElementsByClassName('matched');
+	
+	let output2 = '[id가 foo인 태그의 하위 태그 중 class명이 matched인 모든 태그의 text 출력]\n';
+	for(let i=0; i<fooMatched.length;i++){
+		output2 += fooMatched[i].innerHTML + '\n';
+	}
+	alert(output2);
+	
+	
+	//class명이 여러개인 경우 공백을 구분자로 해서 문자열로 전달
+	//순서는 바꾸어도 됨
+	let fooMatched2 = foo2.getElementsByClassName('matched unmatched'); // b 출력
+	//classnamd이기 때문에 하나라도 배열로 접근
+	let output3 = '[id가 foo인 태그의 하위 태그 중 class명이 matched이면서 unmatched인 모든 태그의 text 출력]\n';
+	for(let i=0; i<fooMatched2.length; i++){
+		output3 += fooMatched[i].innerHTML + '\n';
+	}
+	alert(output3);
+};
+
+</script>
+</head>
+<body>
+<p id="foo">
+	<span class="matched">a</span>
+	<span class="matched unmatched">b</span> <!-- 공백으로 구분 matched,unmatched 둘다 포함 -->
+	<span class="unmatched">c</span>
+</p>
+<p id="bar">
+	<span class="matched">x</span>
+</p>
+</body>
+</html>
+
+<!-- 
+id/ name/ class
+getElements -> 배열로 저장
+getElement -> 1개의 요소
+ -->

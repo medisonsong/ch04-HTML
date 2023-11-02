@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체</title>
+</head>
+<body>
+<script type="text/javascript">
+	//객체 정의 (변수를 만들고 객체 대입)
+	const product = {
+			//속성(key(프로퍼티):value의 쌍)
+			제품명:'휴대폰',
+			제품번호:'A1001',
+			기능:'멀티윈도우',
+			원산지:'대한민국',
+			가격:1000,
+			업데이트지원:true, //마지막 쉼표는 무시됨 (실수로 나열하다 마지막 값에 ,가 있어도 에러 X -자바는 에러남)
+	};
+	//객체의 속성 호출
+				//	객체명.key
+	document.write(product.제품명 + '<br>'); //휴대폰 / 객체의 key는 하위요소로 구분해서 .으로 연결함
+	document.write(product.원산지 + '<br>'); //대한민국
+		//			객체명[key]
+	document.write(product['가격'] + '<br>'); //1000
+	document.write(product['업데이트지원'] + '<br>'); //true
+
+	//위처럼 하나하나 읽을 수도 있고 반복문을 이용해서 읽을 수도 있음!
+
+</script>
+</body>
+</html>
+<!-- 
+객체 만드는 법
+1) {}
+2) 생성자 함수 이용
+3) 클래스 이용
+ -->

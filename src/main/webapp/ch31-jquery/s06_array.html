@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<!-- CDN[Contents Delivery Network] 방식 : URL을 통해 js파일 연결-->
+<!-- 전체 주소를 명시할 거임 (google에서 찾아서) -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+//문서가 준비 완료되면 매개변수로 전달된 함수를 실행
+$(function(){//=$(document).ready(function(){}); 형태의 축약형
+	//배열 생성
+	const array = [
+		{name:'naver',link:'https://www.naver.com'}, //배열 안에 객체를 넣은거임 (key:value)
+		{name:'daum',link:'https://www.daum.net'},
+		{name:'google',link:'https://www.google.co.kr'},
+		{name:'nate',link:'https://www.nate.com'},
+	];
+	//		배열		배열로부터 데이터를 받아서 처리하는 함수 
+	$.each(array,function(index,item){
+		//index: 배열의 index
+		//item: 배열의 index를 통해 접근한 객체 {key:value} -> 위에 const array 이 부분이 전달됨
+		
+		let output = '';
+		output += '<h1>';
+		// '' + item.link + '' 
+		//'<a href="' + item.link + '">' / "": 태그의 속성값
+		output += '<a href="'+item.link+'">' + item.name + '</a>';
+		output += '</h1>';
+		
+		document.body.innerHTML += output;
+	})
+
+});
+</script>
+</head>
+<body>
+	
+
+</body>
+</html>
+<!-- 
+
+ -->

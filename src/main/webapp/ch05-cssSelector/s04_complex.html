@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 선택자와 클래스 선택자 연계</title>
+<style type="text/css">
+	.item{
+		color:orange;
+	}
+	.item2{
+		color:pink;
+	}
+	h1.item{ /*h1이고 item이 적용되어 있는 클래스에 접근 (1번째 것) // 나중에 명시한, 태그와 더 가까운 스타일이 우선순위가 높아지기 때문에 첫번째 h1는 파란색,하늘색이 적용됨*/
+		color:blue;
+		background-color:skyblue;
+	}
+</style>
+
+</head>
+<body>
+
+<h1 class="item">하늘</h1>
+<h1 class="item2">바다</h1>
+<h1>별</h1>
+
+<span class="item">비행기</span>
+
+</body>
+</html>

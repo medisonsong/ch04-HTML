@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비교 연산자</title>
+</head>
+<body>
+<script type="text/javascript">
+	var a=20, b='20', result; // a=number, b=string // 명시적 형변환 신경쓸 필요 없이 b가 자동 형변환이 돼서 정상처리됨
+/*
+연산자		설명
+x === y		x와 y의 값과 타입(자료형)이 같으면 true
+x !== y		x와 y의 값 또는 타입이 다르면 true
+*/
+	result = a == b; //값만 비교
+	document.write('a == b : ' + result + '<br>'); //true
+	
+	result = a === b; //값과 타입을 모두 비교
+	document.write('a === b : ' + result + '<br>'); //false (타입이 다르기 때문에)
+	
+	result = a != b; //값만 비교
+	document.write('a != b : ' + result + '<br>'); //false
+	
+	result = a !== b; //값과 타입을 모두 비교 (둘다 다르거나 하나만 같아야 true/ 둘다 같으면 false)
+	document.write('a !== b : ' + result + '<br>'); //true
+	
+	result = a > b;
+	document.write('a > b : ' + result + '<br>'); //false
+	
+	result = a >= b;
+	document.write('a >= b : ' + result + '<br>'); //true
+	
+	result = a < b;
+	document.write('a < b : ' + result + '<br>'); //false
+	
+	result = a <= b;
+	document.write('a <= b : ' + result + '<br>'); //true
+</script>
+</body>
+</html>

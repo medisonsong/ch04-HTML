@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>영문자 대문자로 변경하기</title>
+<script type="text/javascript">
+	function trans(){
+		let txt = document.form1.id.value; //(document객체의 도움을 받을거임) name속성을 이용해서 form1-id에 접근
+		txt = txt.toUpperCase(); //대문자로 변환
+		//name이 id인 input태그의 값을 변경
+		document.form1.id.value = txt; // id input의 value값 변경
+	}
+</script>
+</head>
+<body>
+	<form name="form1">
+		ID를 소문자로 입력하세요. 대문자로 변환됩니다.<br>
+		ID : <input type="text" name="id">
+		<input type="button" value="입력" onclick="trans()">
+	</form>
+</body>
+</html>
+<!-- 입력 버튼을 누르면 trans function이 동작해서 대문자로 변환됨 -->

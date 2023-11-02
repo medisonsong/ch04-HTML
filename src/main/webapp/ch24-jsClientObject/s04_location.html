@@ -1,0 +1,24 @@
+<!-- location이 주소에 대한 정보를 가지고 있기 때문에 그걸 출력해보는 시트를 작성해볼게용 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location</title>
+</head>
+<body>
+<script type="text/javascript">
+	document.write('location.href : ' + location.href + '<br>'); // 현재 실행시킨 html의 전체 주소가 출력됨
+	
+	// http://localhost:8080/ch04-HTML/ch24-jsClientObject/s04_location.html
+	// http> 프로토콜/ localhost> 호스트/ 8080> 포트 (웹은 보통 80포트인데 테스트라 8080, 80은 기본 포트라 보통 명시 안하고 우리가 포트를 바꿀 수 있음)
+	
+	//location을 이용해 개별적인 정보 출력
+	document.write('location.protocol : ' + location.protocol + '<br>'); //location.protocol : http:
+	document.write('location.host : ' + location.host + '<br>'); //location.host : localhost:8080
+	document.write('location.hostname: ' + location.hostname + '<br>'); //location.hostname: localhost
+	document.write('location.port : ' + location.port + '<br>'); // location.port : 8080
+	document.write('location.pathname : ' + location.pathname + '<br>'); //location.pathname : /ch04-HTML/ch24-jsClientObject/s04_location.html (프로젝트명-폴더명-파일명)
+	
+</script>
+</body>
+</html>

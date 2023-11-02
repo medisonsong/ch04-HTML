@@ -1,0 +1,56 @@
+<!-- 마우스와 관련된 이벤트 속성
+테이블 형태로 메뉴 만들기
+전에는 가로로 만들었었는데 이번엔 세로로 진행되는 메뉴를 만들거에용
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>mouseover,mouseout 이벤트</title>
+<style type="text/css">
+a{
+	color:white;
+	text-decoration:none;
+}
+td{
+	width:100px;
+	margin-top:10px;
+	text-align:center;
+	background-color:#FF8888;
+}
+</style>
+<script type="text/javascript">
+	function changeBgColor(cell,newColor){ //테이블을 사용할거라서 cell=td를 의미 td의 bgcolor를 변경할거임
+		//이벤트가 발생한 태그에 이벤트 속성 제어
+		cell.style.backgroundColor = newColor;
+	}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+	<!-- 여기서의 this는 이벤트가 발생한 태그를 의미함 // 여기선 td를 의미. changeBgColor(cell,newColor) --> 
+		<td onmouseover="changeBgColor(this,'#FF0000')" 
+			onmouseout="changeBgColor(this,'#FF8888')">
+		 <!-- 여기에 마우스 올렸을 때 색을 변하게 하고 싶은거 -->
+			<a href="#">menu01</a>
+		</td>
+	</tr>
+	<tr>
+		<td onmouseover="changeBgColor(this,'#FF0000')"
+		    onmouseout="changeBgColor(this,'#FF8888')">
+			<a href="#">menu02</a>
+		</td>
+	</tr>
+	<tr>
+		<td onmouseover="changeBgColor(this,'#FF0000')"
+		    onmouseout="changeBgColor(this,'#FF8888')">
+			<a href="#">menu03</a>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+<!-- 
+onmouseover을 하고 싶으면 over랑 out 둘다 설정해야함
+ -->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<!-- CDN[Contents Delivery Network] 방식 : URL을 통해 js파일 연결-->
+<!-- 전체 주소를 명시할 거임 (google에서 찾아서) -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+//문서가 준비 완료되면 매개변수로 전달된 함수를 실행
+$(document).ready(function(){
+/*
+ 입력 양식 필터 선택자
+ 선택자형태 (요소=태그)			설명
+ 요소:checked				체크된 입력 양식
+ 요소:disabled			비활성화된 입력 양식
+ 요소:enabled				활성화된 입력 양식
+ 요소:focus				초점이 맞춰져있는 입력 양식
+ 요소:selected			select 태그에서 option 객체 중 선택된 태그
+ */
+
+ 	//5초 후에 코드를 실행
+ 	setTimeout(function(){
+		//select 태그에서 선택한 option에 접근
+											//val = 선택한 값 반환
+		let value = $('select > option:selected').val(); //select의 자식선택자 option의 선택된 값 (selected) //얘가 입력양식 필터선택자임
+		alert(value);
+ 	},5000);
+});
+</script>
+</head>
+<body>
+	<select>
+		<option>사과</option> <!-- value값 생략 가능/ option value="사과">사과< 이걸 선택하면 value값이 보이는데 만약 value값이 없으면 자동으로 >< 사이 값이 선택됨 -->
+		<option>토마토</option>
+		<option>바나나</option>
+		<option>멜론</option>
+		<option>포도</option>
+	</select>
+</body>
+</html>

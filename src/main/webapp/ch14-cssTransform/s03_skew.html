@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>skew</title>
+<style type="text/css">
+
+/*
+skew(각도1, 각도2): 각도1은 x축상의 왜곡을 가리키고, 각도2는 y축상의 왜곡 각도를 의미함.
+				  if 각도2가 주어지지 않는다면 y축에 대한 각도=0 으로 간주하여 y축으로는 왜곡이 일어나지 않음
+				  (각도1 필수/ 각도2 선택 기재)
+				  
+skewX(각도): x축을 따라 주어진 각도만큼 왜곡
+
+skewY(각도): y축을 따라 주어진 각도만큼 왜곡  
+*/
+
+.my-photo{
+	position:absolute;
+	left:50;
+	top:70;
+	transform:skew(10deg,10deg);
+}
+
+</style>
+</head>
+<body>
+<img class="my-photo" src="../files/cross.jpg">
+</body>
+</html>

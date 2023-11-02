@@ -1,0 +1,62 @@
+<!-- slide up/ down -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<style type="text/css">
+h1{
+	width:300px;
+	height:200px;
+	background-color:#FF0;
+}
+</style>
+
+<!-- CDN[Contents Delivery Network] 방식 : URL을 통해 js파일 연결-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#btn1').on('click',function(){
+		//위로 올라가면서 숨겨짐
+		$('h1').slideUp(1000);
+	});
+	
+	$('#btn2').on('click',function(){
+		//아래로 내려가면서 보여짐
+		$('h1').slideDown('slow');
+	});
+	
+	$('#btn3').on('click',function(){
+		//반대로 동작
+		$('h1').slideToggle('fast');
+	});
+	
+	/*
+	$('#btn1').on('click',function(){
+		//위로 올라가면서 숨겨짐
+		$('#dog').slideUp(1000);
+	});
+	
+	$('#btn2').on('click',function(){
+		//아래로 내려가면서 보여짐
+		$('#dog').slideDown('slow');
+	});
+	
+	$('#btn3').on('click',function(){
+		//반대로 동작
+		$('#dog').slideToggle('fast');
+	});
+	*/
+
+}); 
+</script>
+</head>
+<body>
+	<button id="btn1">slideUp</button>
+	<button id="btn2">slideDown</button>
+	<button id="btn3">slideToggle</button>
+	<br>
+	<h1>내용</h1>
+	<img id="dog" src="../files/블랙맘바.jpg" width="120" height="100">
+</body>
+</html>

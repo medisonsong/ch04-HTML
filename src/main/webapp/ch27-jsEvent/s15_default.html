@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 이벤트</title>
+<script type="text/javascript">
+window.onload = function(){
+	//a태그에 이벤트 연결 (안해도 연결되는데 그냥 해본)
+	document.getElementById('alink').onclick=function(){
+		alert('이벤트 연결');
+		//기본 이벤트 제거
+		return false; //daum으로 이동 안됨
+	};
+	document.getElementById('myForm').onsubmit=function(){
+		let name = document.getElementById('name');
+		alert(name.value);
+		//기본 이벤트 제거
+		return false; //서버로 전송이 안돼서 404페이지가 안뜸
+	};
+};
+</script>
+</head>
+<body>
+<a id="alink" href="https://www.daum.net">이동</a><br><br>
+
+<form id="myForm" action="a.jsp" method="post">
+	이름 <input type="text" name="name" id="name">
+	<input type="submit" value="전송">
+</form>
+</body>
+</html>
+<!-- 
+이벤트 연결을 안하더라도 기본적으로 이벤트를 처리시키는 태그가 2개 있음
+a태그랑 form 태그임
+a-> 클릭하면 이동
+form-> submit버튼 누르면 처리됨
+
+다른 형태로 이벤트가 처리되길 원하면 그 이벤트를 제거하고 다시 생성하면 됨
+--------------------------------------------------------
+js를 이용해서 서버랑 통신할 수 있는데 submit하게 되면 페이지가 변동됨
+근데 폼을 변동시키지 않고 데이터만 보내기 위해 return false를 써서 submit을 제거하고
+데이터만 뽑아서 전송. 그럴때 많이 씀
+ -->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 사용시 주의사항</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	//함수의 이름이 같을 경우 마지막 함수 호출
+	function 함수(){
+		document.write('함수 A<br>');
+	}
+	function 함수(){
+		document.write('함수 B<br>'); //같은 형태로 함수를 만들어도 에러가 안 남 (나중에 정의한 게 호출됨. 주의!!)
+	}
+	//함수 호출
+	함수();
+	
+	document.write('--------------------------------<br>');
+	
+	함수2(); //정의한 것보다 먼저 호출해도 안정적으로 동작됨 (함수 호이스팅)
+	
+	function 함수2(){//선언적 함수
+		document.write('함수 2<br>');
+	}
+	
+	document.write('--------------------------------<br>');
+	
+	//변수 선언은 중복될 수 있고 호출은 마지막 변수가 호출됨
+	//익명 함수를 대입하면 마지막 함수가 호출
+	var 함수3 = function(){ //익명 함수
+		document.write('함수 C<br>');		
+	};
+	var 함수3 = function(){
+		document.write('함수 D<br>');
+	};
+	
+	//함수 호출
+	함수3();
+	
+	document.write('--------------------------------<br>');
+	
+	//함수4(); ==> is not a function 이라고 콘솔에 오류 메시지 듬
+	//익명함수로 함수를 정의하면 함수 호이스팅이 발생하는 것이 아니라 변수 호이스팅이 발생함.
+	//익명함수 이전에 함수를 참조하면 undefined로 평가됨 
+	
+	var 함수4 = function(){
+		document.write('함수4');		
+	};
+	
+	//song: 여기서 함수4는 변수로 인식이 돼서 undefined가 됨 -> 변수 호이스팅이 일어나는데 함수4 뒤에 ()가 붙었기 때문에 오류가 발생
+	
+</script>
+</body>
+</html>

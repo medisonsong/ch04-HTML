@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<!-- CDN[Contents Delivery Network] 방식 : URL을 통해 js파일 연결-->
+<!-- 전체 주소를 명시할 거임 (google에서 찾아서) -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+//문서가 준비 완료되면 매개변수로 전달된 함수를 실행
+$(document).ready(function(){
+	//태그 선택자
+	//				속성				속성값 (내부적으로 루프를 돌면서 span태그 2개에 style지정해줌)
+	$('span').css('border', '3px solid blue'); // =document.getElementsByTagName('span')
+	
+	//클래스 선택자 (.클래스명)
+	//				속성				속성값 (내부적으로 루프를 돌면서 .my태그 2개에 style지정해줌)
+	$('.my').css('border', '5px solid red');
+	
+	//id 선택자 (단일 선택자라서 내부적으로 루프x)
+	$('#content').css('background-color', 'green');
+});
+</script>
+</head>
+<body>
+	<p class="my">jQuery 실습</p> <!-- 얘랑 밑에 class=my도 $('.my')덕분에 jquery 객체로 인식 가능하게 함 -->
+	<div>
+		<div id="content">id값이 content인 div tag</div>
+	</div>
+	<span>span1</span> <!-- $('span') -> jquery객체로 인식, 메서드 사용 가능 -->
+	<span class="my">span2</span>
+	
+</body>
+</html>

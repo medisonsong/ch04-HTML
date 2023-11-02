@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그명을 통해서 문서 객체 탐석</title>
+<script type="text/javascript">
+//윈도우가 로드될 때 호출
+window.onload = function(){
+	//태그명을 통해서 태그를 탐색, 문서 객체로 반환
+	//복수의 태그가 존재할 수도 있기 때문에 배열로 반환
+	let spans = document.getElementsByTagName('span'); // TagName이 span인 태그를 찾음 
+	spans[0].innerHTML = '달빛이 찬란한 호수';
+	spans[1].innerHTML = '흰 눈이 눈부신 들판';
+};
+</script>
+</head>
+<body>
+	<!-- Node List -->
+	<span>하늘</span><br>
+	<span>하늘</span>
+	
+	<!-- 
+	원래는
+	하늘
+	하늘 		이라고 출력되어야 하는데
+	위 innerHTML을 통해서 내용이 변경됨
+	달빛이 찬란한 호수
+	흰 눈이 눈부신 들판
+	 -->
+	 
+</body>
+</html>
+<!-- 
+getElement에 s가 들어갈 수도 안 들어갈 수도 있음 (elements면 배열로 반환)
+getElementByName (s07_Date에 했던거)
+getElementsByTagName 
+
+getElementsByTagName('span') 을 했기 때문에 
+span 태그는 let spans 배열에 들어가서 Node List가 됨 
+ 
+index[0] 스판태그1
+index[1] 스판태그2 이렇게..!!
+ -->

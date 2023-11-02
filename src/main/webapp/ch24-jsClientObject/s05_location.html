@@ -1,0 +1,39 @@
+<!-- href와 다른 메서드들을 사용해서 url 대입 후 이동해보기 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location</title>
+</head>
+<body>
+<!-- 페이지 이동을 할 수 있고 history 정보가 남아있어서 원래 페이지로 돌아갈 수 있음 -->
+<!-- href 속성 -->
+<input type="button" value="이동(href)" onclick="location.href='s02_window.html'"><br>
+<!-- assign 메서드 -->
+<input type="button" value="이동(assign)" onclick="location.assign('s04_location.html')"><br>
+
+
+<!-- 페이지 이동을 할 수 있고 history 정보가 지워짐 / 원래 페이지로 돌아가지 못함 -->
+<!-- replace 메서드 -->
+<input type="button" value="이동(replace)" onclick="location.replace('s02_window.html')"><br>
+
+
+<!-- location.reload(): 서버로부터 정보를 새롭게 받고 싶을 때  -->
+<input type="button" value="새로고침" onclick="location.reload()">
+
+</body>
+</html>
+<!-- 
+이동하는 속성
+href
+----------------
+이동하는 메서드
+assign
+replace
+===============
+href/ assign => 같음
+replace는 조금 다른데 그건 ..더보기
+
+replace의 이동 버튼을 누르면 back버튼이 없어짐 ==>
+replace가 history정보를 다 지워버리기 때문에 이동하면 다시 원래로 돌아올 수가 없음
+ -->

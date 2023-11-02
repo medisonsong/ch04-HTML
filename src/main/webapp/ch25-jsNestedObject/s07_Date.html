@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date</title>
+<script type="text/javascript">
+	//윈도우가 로드될 때 호출
+	window.onload = function(){ //function이 head에 있어서 body보다 먼저 실행됨 그래서 window.onload를 넣는거 (body span태그 뒤에 있으면 안넣어도 상관x)
+		//일정 시간마다 매개변수로 전달된 함수를 반복해서 실행
+		setInterval(function(){
+			const time = new Date();
+			let hours = time.getHours();
+			let minutes = time.getMinutes();
+			let seconds = time.getSeconds();
+			
+			let clock = ''; //여기다 누적
+
+			// 00:00:00 형식으로 화면 표기
+			clock += ((hours < 10) ? '0' : '') + hours;
+			clock += ((minutes < 10) ? ':0' : ':') + minutes;
+			clock += ((seconds < 10) ? ':0' : ':') + seconds;
+			
+			//span을 호출해서 시간을 span태그의 내용으로 표시
+			document.getElementById('display').innerHTML = clock; 
+			// document=문서 전체를 인식 / document아래에 getElement라는게 있다함 그래서 그걸로 display인 id를 찾는거임 -> 그러고 clock을 inner해줌 
+			
+		},1000); //1초 단위로 실행 (초마다 시간이 바뀌니께)
+	};
+
+</script>
+</head>
+<body>
+	<span id="display"></span> <!-- 스판태그는 내용이 없는데 <>여기<> 안에다가 동적으로 시간을 넣으려고 함-->
+</body>
+</html>
+
+<!-- 
+document.getElementById('')	해당 id를 가지고 있는 곳에 접근
+innerHTML = ''				HTML에 해당 내용을 넣음 / 내용을 제어하는 속성을 가지고 있음
+ -->

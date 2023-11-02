@@ -1,0 +1,42 @@
+<!-- 전체150자만 입력할 수 있다고 가정하고 남은 글자 수 표시하기 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>key 이벤트</title>
+<script type="text/javascript">
+/*
+ 이벤트이름				설명					발생순서
+ keydown		키보드가 눌러질 때 발생				1
+ keypress		글자가 입력될 때 발생(한글 사용x)		2
+ keyup			키보드가 떼어질 때 발생				3
+ 
+ 한글 처리는 다 keyup
+ 다른건 다 keydown+keypress
+ */
+
+ //한글을 확인할거라서 keyup이 발생할때만 반응/ 다른건 무반응
+ window.onload=function(){
+	document.getElementById('content').onkeyup=function(){//코드절약 위해 변수 지정안하고 그냥 바로 keyup함수
+		//입력한 글자 수 구하기
+		let inputLength = this.value.length; //textarea 접근 (이벤트가 발생한 부분이 this니까) 해서 글자수 알아냄
+		//남은 글자 수 구하기 (150자 이내)
+		let remain = 150-inputLength;
+		
+		//문서 객체에 남은 글자수 반영
+		let letter = document.getElementById('letter'); //h4 태그에 접근
+		letter.innerHTML = remain;
+	};
+};
+</script>
+</head>
+<body>
+<h4 id="letter">150</h4>
+<!-- rows:높이 cols:넓이 -->
+<textarea rows="5" cols="30" name="content" id="content"></textarea>
+</body>
+</html>
+<!-- 
+변수를 안쓰고 만들수도 있는데
+이해가 안될거같으면 걍 쓰고 하세용 오류나는 것보단 나으니까
+ -->

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String의 메서드 사용</title>
+</head>
+<body>
+<script type="text/javascript">
+	let msg = '세상의 끝에서 세상을 노래하다'; // 변수 입력
+	
+	document.write(msg.length + '<br>'); //16
+	document.write(msg.charAt(8) + '<br>'); //세
+	document.write(msg.indexOf('상') + '<br>'); //1
+	document.write(msg.indexOf('노래') + '<br>'); //12
+	document.write(msg.indexOf('수')  + '<br>'); //-1 (없는 값은 -1 반환)
+	document.write(msg.lastIndexOf('상')  + '<br>'); //9
+	document.write('--------------------------<br>');
+	
+	//지정한 인덱스부터 끝 인덱스까지 추출
+	document.write(msg.substring(5) + '<br>'); //에서 세상을 노래하다 
+	document.write(msg.substr(5) + '<br>'); //에서 세상을 노래하다
+	document.write(msg.slice(5) + '<br>'); //에서 세상을 노래하다
+	document.write('--------------------------<br>');
+	
+	//substring(시작인덱스, 끝인덱스-1)
+	document.write(msg.substring(1,5) + '<br>'); //상의 끝 (인덱스1 ~ 인덱스4)
+	//substr(시작 인덱스, 추출할 문자 개수)
+	document.write(msg.substr(5,2) + '<br>'); //에서 (인덱스5부터 2개 추출)
+	//slice(시작인덱스, 끝인덱스-1)
+	document.write(msg.slice(1,5) + '<br>'); //상의 끝
+	document.write(msg.slice(5,2) + '<br>'); // --> 데이터 추출이 안됨
+	
+	
+	
+	
+	let msg2 = 'Hello WORLD';
+	
+	document.write(msg2.toUpperCase() + '<br>'); //HELLO WORLD / 대문자로 변환
+	document.write(msg2.toLowerCase() + '<br>'); //hello world / 소문자로 변환
+	document.write('--------------------------<br>');
+	
+	
+	
+	
+	let msg3 = '하하';
+	
+	//인자로 전달된 문자열을 연결해서 새로운 문자열 반환
+	document.write(msg.concat(msg3) + '<br>'); //세상의 끝에서 세상을 노래하다하하
+	document.write('---------------------------<br>');
+	
+	
+	
+	
+	let msg4 = '2023-10-25';
+	
+	//구분자를 이용해서 데이터 추출
+	let array = msg4.split('-');
+	document.write(array + '<br>'); //2023,10,25
+	
+	
+	
+	
+	
+</script>
+</body>
+</html>
+<!-- 
+
+length: 길이 반환
+charAt(8): 8번째에 있는 문자 추출
+indexxOf(문자, 문자열): 문자 또는 문자열의 위치 추출 (문자열은 첫 문자 위치 반환) // 없는 값은 -1 반환
+lastIndexOf(문자, 문자열): 문자 또는 문자열을 뒤에서부터 탐색, 위치 추출
+substring(5): 지정한 인덱스(5) ~ 끝 인덱스까지 추출
+		(1,5) : 시작인덱스[1] ~ 끝인덱스[5-1]까지 추출
+substr(5): 지정한 인덱스(5) ~ 끝 인덱스까지 추출
+	 (5,2) : 시작덱스[5]부터 2문자 추출
+slice(5): 지정한 인덱스(5) ~ 끝 인덱스까지 추출
+
+toUpperCase()
+toLowerCase()
+
+.concat() : 인자롣전달된 문자열 연결 -> 새로운 문자열 반환
+
+split('') : 구분자를 이용해서 데이터 추출
+
+ -->

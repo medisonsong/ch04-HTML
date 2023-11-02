@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로컬 스토리지</title>
+<!-- 제이쿼리(외부파일) 링크 걸어서 가져올거임 / 문자열을 객체로 변환해주는 메서드 링크를 건거임 -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+	//저장 이벤트 연결
+	let save = document.getElementById('save');
+	save.onclick = function(){
+		//사용자가 입력한 번호,이름,주소를 읽어옴
+		let num = document.getElementById('num'); 
+		let name = document.getElementById('name');
+		let addr = document.getElementById('addr');
+		
+		//JSON(JavaScript Object Notation) 형태의 문자열 생성
+		let memberStr = '{"num" : '+num.value+' , "name" : "'+name.value+'", "addr" : "'+addr.value+'"}';
+		//홍길동, 서울시 앞에 큰 따옴표가 있어야 문자열로 인정되기 때문에 name/ addr앞에도 ""를 넣어야 함 (num은 숫자기 때문에 제외)
+		
+		//로컬 스토리지에 저장
+		localStorage.member = memberStr;
+		
+		//초기화
+		num.value = '';
+		name.value = '';
+		addr.value = '';
+	};
+	
+	
+	//불러오기 이벤트 연결
+	let load = document.getElementById('load');
+	load.onclick = function(){
+		//저장된 문자열 읽어오기
+		let loadedMemberStr = localStorage.member;
+		
+		//문자열을 객체화
+		let memberObj = $.parseJSON(loadedMemberStr);
+		
+		//객체에 있는 내용 확인 (객체 표기법에 의해 .연산자를 사용하면 됨) 
+		alert(memberObj.num + ',' + memberObj.name + ',' + memberObj.addr); //1,장영실,부산시
+
+		//alert(loadedMemberStr); 
+		//객체 변환 안하고 출력하면 {}형태로 문자열 읽어옴 / {"num" : 1, "name" : "장영실", "addr" : "부산시"}
+		
+	};
+};
+</script>
+</head>
+<body>
+번호 <input type="text" id="num"><br>
+이름 <input type="text" id="name"><br>
+주소 <input type="text" id="addr"><br>
+<button id="save">저장</button>
+<button id="load">불러오기</button>
+</body>
+</html>
+<!-- 
+여기서 js 객체를 만들 순 없고 넣으면 저장이 되긴 하는데
+또 제이쿼리를 통해서 변환을 해야 객체가 되는거임
+제이쿼리를 통해 문자열 -> 객체 변환
+
+{
+	"key":"value"
+}	이런식으로 저장하는게 제이슨
+
+
+let memberStr = '{"num" : '+num.value+', "name" : "'+name.value+'", "addr" : "'+addr.value+'"}';
+제이슨 형태의 문자열 (키와 값의 쌍)
+
+홍길동, 서울시 앞에 큰 따옴표가 있어야 문자열로 인정되기 때문에 name/ addr앞에도 ""를 넣어야함
+(num은 숫자기 때문에 제외)
+-----------------------------------------
+{"num" : 1, "name" : "장영실", "addr" : "부산시"} 형태로 불러오는데
+이 문자열을 객체로 변환 시켜서 하나씩 불러오려고 함 (제이쿼리 사용)
+
+
+
+
+json 형태
+{"num":1,"name":"홍길동","addr":"서울시"}
+여기서 
+{} 전체 ''로 묶고 
+value 값 +로 연결하고
+key ""로 묶고
+num 제외 문자열 value ""로 묶으면 됨
+ -->

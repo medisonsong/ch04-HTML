@@ -1,0 +1,50 @@
+<!-- 시멘틱 태그를 사용한 대문 페이지 만들기 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>semantic 태그를 사용한 대문페이지</title>
+</head>
+<body>
+
+<!-- header: 사이트에 대한 소개 정보나 메인 메뉴, 사이트 로고 등이 포함됨 -->
+<header>
+	<!-- hgroup: 제목과 부제목을 묶어주는 역할 -->
+	<hgroup> <!-- 헤더에 제목 넣기 -->
+		<h1>서울 고등학교 홈페이지</h1>
+		<h4>우리들만의 즐거운 공간</h4>
+	</hgroup>
+	
+	<nav> <!-- nav: 사이트의 메뉴나 링크 같은 내비케이션 요소 포함 (메뉴) -->
+		<ul>
+			<li><a href="1.html">1학년</a></li> <!-- 존재x링크 걍 걸었음 -->
+			<li><a href="2.html">2학년</a></li>
+			<li><a href="3.html">3학년</a></li>
+		</ul>
+	</nav>
+</header>
+
+<!-- section: 전체적인 내용 명시할때 사용/ 머릿말꼬리말 등 실제 문서내용-->
+<section>
+	<header><h3>이달의 인물</h3></header> <!-- 내용에도 헤더(제목)가 있고, 내용이 있음 -->
+	<article>
+		교내 영상제에서 <strong>최우수상</strong>을 받은
+		<mark>이빛나양</mark>을 만나봅시다.
+	</article>
+</section>
+
+<footer> <!-- footer> 부가 정보+저작권 -->
+	<address>서울시 강남구 역삼동</address>
+	&copy; 서울 고등학교
+</footer>
+
+</body>
+</html>
+
+<!-- strong; bold/ mark; 형광펜
+header머릿말 section내용 footer꼬리말
+
+header 內 nav
+section 內 header article
+ -->

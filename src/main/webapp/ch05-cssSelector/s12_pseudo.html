@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3의 가상클래스 선택자</title>
+<style type="text/css">
+	div{border:1px solid blue;}
+	/* 부모 내에서 자식을 탐색할 때는 후손 태그까지 확인해서 첫번째, 마지막 자식을 판단 */
+	/* 부모의 첫번째 자식 탐색 (body 내 하나, 후손 태그가 있다면 후손 태그 내 첫번째 자식 하나 > 총 2개)*/
+	p:first-child{background-color:yellow;} /*하하/봄*/
+	
+	/* 부모의 마지막 자식 탐색 (body 내 하나, 후손 태그가 있다면 후손 태그 내 마지막 자식 하나 > 총 2개)*/
+	p:last-child{background-color:pink;} /*겨울/서울 서울이 없다면 겨울만*/
+	
+	/* 부모 내의 같은 유형의 처음, 마지막 판단은 직계 자식 범위 내에서 */
+	/* 부모 내에서 같은 유형의 첫번째 자식 */
+	p:first-of-type{color:green;font-weight:bold;} /*p태그는 body의 자식이면서 div의 자식이기 때문에 하하/봄이 해당됨*/
+	
+	/* 부모 내에서 같은 유형의 마지막 번째 자식 */
+	p:last-of-type{color:red;font-weight:bold;} /*겨울/서울*/
+	
+</style>
+</head>
+<body>
+	<p>하하</p> 
+	<p>호호</p>
+	<p>푸푸</p> <!-- 마지막이 p여야 되는데 div여서 선택을 못함 / 그래서 last-child X -->
+	<div>
+		<p>봄</p>
+		<p>여름</p>
+		<p>가을</p>
+		<p>겨울</p>
+	</div>
+	<p>서울</p> 
+</body>
+</html>

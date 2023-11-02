@@ -1,0 +1,26 @@
+<!-- 내부함수 확장 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부함수</title>
+</head>
+<body>
+<script type="text/javascript">
+	function f(){
+		//변수 선언 및 초기화
+		let n = 123; //let n이 f함수 안에 살아있는 지역변수기 때문에 f함수 안에 있는 g함수 동작에도 가져다 쓸 수 있는거임
+		//내부함수 정의
+		function g(){
+			document.write('n is ' + n + '<br>');
+			document.write('g is called');
+		}
+		//내부 함수 호출
+		g();
+	}
+	//함수 호출
+	f();
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date</title>
+</head>
+<body>
+<script type="text/javascript">
+	const now = new Date();
+	
+	document.write('now의 값 : ' + now + '<br>'); //now의 값 : Wed Oct 25 2023 10:40:51 GMT+0900 (한국 표준시)
+	document.write('now.toString() : ' + now.toString() + '<br>'); //now.toString() : Wed Oct 25 2023 10:41:57 GMT+0900 (한국 표준시)
+	
+	document.write('오늘 : ' + now.toLocaleString() + '<br>'); //오늘 : 2023. 10. 25. 오전 10:43:21
+	document.write('오늘의 날짜 : ' + now.toLocaleDateString() + '<br>'); //오늘의 날짜 : 2023. 10. 25.
+	document.write('오늘의 시간 : ' + now.toLocaleTimeString() + '<br>'); //오늘의 시간 : 오전 10:44:30
+	document.write('-------------------------------------<br>');
+	
+	
+	//자바 캘린더 할 때 따로 구한 것처럼 얘또 따로 구할 수 있음
+	document.write('연도 : ' + now.getFullYear() + '<br>'); // 연도 : 2023
+	document.write('월 : ' + (now.getMonth()+1) + '<br>'); //월 : 10
+	document.write('일 : ' + now.getDate() + '<br>'); //일 : 25
+	document.write('요일 : ' + now.getDay() + '<br>'); //요일 : 3 / 0(일)~6(토)
+	
+	//시분초 도 가능 (24시 표기법/ 12시로 표기하고 싶으면 연산해야함)
+	document.write('시 : ' + now.getHours() + '<br>'); //시 : 10
+	document.write('분 : ' + now.getMinutes() + '<br>'); //분 : 51
+	document.write('초 : ' + now.getSeconds() + '<br>'); //초 : 23
+	document.write('밀리초 : ' + now.getMilliseconds() + '<br>'); //밀리초 : 886
+	
+</script>
+</body>
+</html>
+<!-- 
+now => 영문으로 년월일시분초 다 나옴
+
+한글로 바꾸고 싶으면 toLocaleString 을 사용하면 됨
+날짜만 -> now.toLocaleDateString()
+시간만 -> now.toLocaleTimeString()
+
+연월일
+연도 -> now.getFullYear()
+월 -> now.getMonth()+1 >> 0~11로 인식하기 때문에 +1해야함
+일 -> now.getDate()
+요일 -> now.getDay()
+
+시분초
+시 -> now.getHours()
+분 -> now.getMinutes()
+초 -> now.getSeconds()
+밀리초 -> now.getMilliseconds()
+ -->

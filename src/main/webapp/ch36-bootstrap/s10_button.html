@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- 모바일 장치에서 웹 사이트가 원하는 사이즈로 보여지게 처리 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+	<!-- 버튼 색 채우기 (기본형태) -->
+	<h4>Buttons</h4> 
+	<!-- a태그랑 input태그가 기본적으로 링크가 걸리기 때문에 button으로 대신 사용해도 됨 -->
+	<button type="button" class="btn btn-primary">Primary</button>
+	<button type="button" class="btn btn-secondary">secondary</button>
+	<button type="button" class="btn btn-success">success</button>
+	<button type="button" class="btn btn-danger">danger</button>
+	<button type="button" class="btn btn-warning">warning</button>
+	<button type="button" class="btn btn-info">info</button>
+	<button type="button" class="btn btn-light">light</button>
+	<button type="button" class="btn btn-dark">dark</button> 	
+	
+	
+	<!-- 버튼 채우기 없음 아웃라인 색만 (btn-outline-) -->
+	<h4>Outline Buttons</h4> 
+	<button type="button" class="btn btn-outline-primary">Primary</button>
+	<button type="button" class="btn btn-outline-secondary">secondary</button>
+	<button type="button" class="btn btn-outline-success">success</button>
+	<button type="button" class="btn btn-outline-danger">danger</button>
+	<button type="button" class="btn btn-outline-warning">warning</button>
+	<button type="button" class="btn btn-outline-info">info</button>
+	<button type="button" class="btn btn-outline-light">light</button>
+	<button type="button" class="btn btn-outline-dark">dark</button> 	
+	
+	
+	<!-- 메뉴처럼 버튼을 묶어서 (버튼 그룹) 사용할 수도 있음 / 단일한 버튼으로 사용하는 경우가 제일 많긴 함 -->
+	<h4>버튼 그룹</h4>
+	<div class="btn-group">
+		<button type="button" class="btn btn-danger">Left</button>
+		<button type="button" class="btn btn-warning">Middle</button>
+		<button type="button" class="btn btn-success">Right</button>
+	</div>
+	
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- 버튼을 누르면 창이 열리고, 버튼을 누르면 창이 닫히는걸 만들어보장 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>새 윈도우 객체 생성</title>
+<script type="text/javascript">
+
+/*
+ window.open(url,새 창 이름,옵션): 창 열기
+ 
+ 옵션 (일부만 지정해도 됨)
+ width : 새 윈도우 넓이
+ height : 새 윈도우 높이
+ location : 주소 입력창 유무
+ menubar : 메뉴의 유무
+ resizable : 화면 크기 조절 기능 여부
+ status : 상태 표시줄의 유무
+ toolbar : 툴바 유무 결정
+ scrollbars : 스크롤바 유무 결정
+ left : 창의 가로축 위치 지정
+ top : 창의 세로축 위치 지정
+
+ window.close(): 창 닫기
+ */
+ 
+ //창이 열리면 열려있는 창의 정보를 저장하고, 닫는 버튼을 누르면 그 열린 창이 닫히게 만들거라 열린 창의 정보를 win에 저장
+ let win;
+ 
+ function winOpen(){
+	 win = window.open('https://www.naver.com','child',
+			 'toolbar=no,location=no,status=no,menubar=no,resizable=no,scrollbars=no,width=400,height=300'); 
+ }
+ function winClose(){
+	 win.close(); //열려있는 창을 닫음
+ }
+
+//창열기 해서 봤는데 location,resizable,scrollbars가 동작됨
+//예전엔 동작했는데 지금은 정책상 동작 못하게 바꼈기 때문
+
+</script>
+</head>
+<body>
+
+<input type="button" value="창 열기" onclick="winOpen()">
+<input type="button" value="창 닫기" onclick="winClose()">
+
+</body>
+</html>

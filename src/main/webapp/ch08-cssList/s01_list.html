@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>리스트</title>
+<style type="text/css">
+
+/*
+list-style-type: 목록의 기호(문자) 지정
+*/
+ul{
+	list-style-type:circle;
+}
+
+/*
+list-style-image: 목록의 기호(문자)를 이미지로 지정
+*/
+ul.list{
+	list-style-image:url(../files/bullet.gif); /*파일 경로에 공백이 없다면 작은 따옴표 생략 가능*/
+}
+
+/*
+list-style-position: 목록 기호(문자)의 위치 지정
+*/
+ul.list2{
+	list-style-image:url(../files/bullet.gif); /*기본: 내어쓰기 한 것처럼 아이콘이 밖으로 나와있음*/
+	list-style-position:inside; /*아이콘이 문장 안으로 들어감*/
+}
+
+</style>
+</head>
+<body>
+<ul> <!-- 복습하자면 ul -> 순서 없는, ol -> 순서 있는 -->
+	<li>봄</li>
+	<li>여름</li>
+	<li>가을</li>
+	<li>겨울</li>
+</ul>
+
+<ul class="list"> 
+	<li>서울</li>
+	<li>부산</li>
+	<li>대구</li>
+	<li>광주</li>
+</ul>
+
+<ul class="list2"> 
+	<li>불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다. 불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다.</li>
+	<li>불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다. 불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다.</li>
+	<li>불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다. 불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다.</li>
+	<li>불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다. 불릿을 적용한 리스트 항목의 텍스트가 한 줄보다 긴 경우가 종종 있다.</li>
+</ul>
+
+</body>
+</html>

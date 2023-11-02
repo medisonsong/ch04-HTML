@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>id와 태그명을 사용해서 문서 객체 탐색</title>
+<script type="text/javascript">
+window.onload = function(){
+	let allSpans = document.getElementsByTagName('span');
+	
+	let output = '[모든 span 태그의 text 출력]\n';
+	for(let i=0; i<allSpans.length; i++){
+		output += allSpans[i].innerHTML + '\n';
+		//alert은 브라우저가 만들어내는 창이라서 줄바꿈을 하려면 \n으로 해야함
+	}
+	alert(output); //output 구문+ span태그를 alert창에 띄움
+	
+	//id=foo인 p태그 접근 (id=foo인 p태그를 객체로 인식)
+	let foo = document.getElementById('foo');
+	let fooSpans = foo.getElementsByTagName('span');
+	//document. 은 전체 문서를 탐색하는거임. 특정 태그 안에서 탐색하고 싶으면 그 태그를 넣으면 됨/ foo. -> foo안에서만 탐색
+	
+	let output2 = '[id가 foo인 p태그 하위 태그 중 모든 span 태그의 text 출력]\n';
+	//id=foo인 p태그의 하위 태그 중 span태그의 모든 text를 출력한다는 말임..^^
+	for(let i=0; i<fooSpans.length; i++){
+		output2 += fooSpans[i].innerHTML + '\n';
+	}
+	alert(output2);
+};
+</script>
+</head>
+<body>
+	<p id="foo">
+		<span>a</span>
+		<span>b</span>
+		<span>c</span>
+	</p>	
+	<p id="bar">
+		<span>x</span>
+	</p>
+</body>
+</html>
+<!-- 
+2개의 p태그 안에 span 태그 지정 (p1 = foo/ p2 = bar)
+
+이걸 이제 window.onload되면 찾을거라 이 안에서 객체를 탐색할건데
+allSpans 변수 안에 모든 span태그를 찾아서 넣고 출력
+
+id=foo인 p태그의 모든 span태그 출력 
+ -->

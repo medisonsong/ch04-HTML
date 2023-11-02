@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부함수</title>
+</head>
+<body>
+<script type="text/javascript">
+	function f(){
+		//변수 선언 및 초기화
+		let n = 123;
+		//내부함수 정의
+		function g(){
+			document.write('n is ' + n + '<br>');
+			document.write('g is called');
+		}
+		return g; //내부함수 반환 (호출x)
+	}
+	//함수 호출
+	let m = f(); //내부함수가 반환되기 때문에 변수에 담아줘야함 (function g가 let m에 대입된 상태)
+	// f함수를 m에 넘기면서 return 동작 후 let n (지역변수)가 소멸되어야 하는데 남아있고, 동작함 
+	// 이건 데이터를 사용 못하는 상황을 방지하기 위해 지역변수를 남겨두는 예외를 둔 것..!
+	// 이렇게 지역 변수를 남겨두는 현상을 클로저 현상이라고 함.
+	
+	document.write(m + '<br>'); //소괄호가 없으면 g함수가 호출되는게 아니라 그냥 출력되는거임 
+	document.write('-----------<br>');
+	
+	//m에 저장된 g함수 호출 (그럼 이제 m이 함수명인 것처럼 호출할 수 있음/ =익명함수랑 같은 모양새)
+	m();
+	
+</script>
+</body>
+</html>
+
+<!-- 
+내부함수
+1) function f(){ function g(){ g();
+--호출
+f();
+
+f를 호출하면 g함수가 내부적으로 자동 호출돼서 g함수의 내용도 보임
+=================================================
+2) function f(){ function g(){ return g;
+--호출
+let 변수 = f(); // g의 return값을 다른 변수에 넣음
+
+document.write(변수) // g값을 그대로 출력
+변수(); // g를 호출해서 동작싴서 출력 
+
+=> let n (지역변수) 에 클로저 현상도 일어남
+ -->

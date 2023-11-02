@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery UI</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#datepicker').datepicker({
+		showMonthAfterYear:true,
+		dateFormat:'yy-mm-dd',
+		dayNamesMin:['일','월','화','수','목','금','토'],
+		changeMonth:true, 
+		//달을 쉽게 변경하기 위해 changeMonth:true로 명시하면 달의 표기를 변경할 때 
+		//monthNamesShort를 사용해야 정상 동작함 (monthNames라고만 하면 변경되지 않고 Nov 이런식으로 표기됨)
+		monthNamesShort:['1','2','3','4','5','6','7','8','9','10','11','12'],
+		changeYear:true // 연도를 쉽게 변경할 수 있게 토글박스(?) 같은 게 생김
+	});
+});
+</script>
+</head>
+<body>
+	<p>
+		Date : <input type="text" id="datepicker">
+	</p>
+</body>
+</html>
+<!--input으로 date 하는 것보다 옵션이 더 많고
+영화예약하는 것처럼 날짜, 시간 제약을 둘 수 있음-->
