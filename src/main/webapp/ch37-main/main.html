@@ -498,3 +498,503 @@ nav#last{
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>국립현대미술관</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Noto+Serif+KR&display=swap" rel="stylesheet">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+$(function(){
+	$('#datepicker').datepicker({
+		showMonthAfterYear:true,
+		dateFormat:'yy-mm-dd',
+		dayNamesMin:['일','월','화','수','목','금','토'],
+		changeMonth:true, 
+		monthNamesShort:['1','2','3','4','5','6','7','8','9','10','11','12'],
+		changeYear:true 
+	});
+});
+
+};
+</script>
+<style type="text/css">
+/*기본 설정*/
+*{
+	margin:0;
+	padding:0;
+}
+#wrap{
+	font-family: 'Noto Serif KR' !important;
+	margin:0 auto;
+	width:1600px;
+	margin:0 auto;
+}
+#navbarContent{
+	font-weight:bold;
+}
+ul li a{
+	text-decoration:none;
+	color:black;
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+a#link img:hover{
+	box-shadow: 5px 5px 10px #000;
+}
+
+/*관람 예약 라인*/
+div#text{
+	float:left;
+	
+}
+div#date{
+	float:right;
+	
+}
+div#date div{
+	margin-bottom:10px;
+	text-align:right;
+}
+
+/*검색 양식*/
+#input-search{
+	display:block;
+	
+	background-color:white;
+	border-radius:15px 0 0 15px;
+	box-shadow:0 1px 1px rgba(0,0,0,0.5);
+	padding:0 0 0 10px;
+}
+#search-submit{
+	border-radius:0 15px 15px 0;
+}
+
+#datepicker{
+	border-radius: 15px;
+	box-shadow:0 1px 1px rgba(0,0,0,0.5);
+	margin-top:60;
+}
+
+/*현재 전시 정렬*/
+#art1, #art2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*banner 가운데 정렬*/
+div#banner{
+	text-align:center;
+}
+
+/*sidebar 정렬*/
+#all_bar ul{
+    list-style:none;
+    float: left;
+    margin:40px;
+}
+ul#newsletter{
+	float:left;
+}
+ul#social, ul#law, ul#qna{
+	float:right;
+}
+#newsletter li{
+	margin-left:-40px;
+	margin-bottom:13px;
+}
+
+/*footer*/
+ul#number{
+	margin-left:-5px;
+	float:left;
+}
+a#identification{
+	float:right;
+}
+nav#last{
+	margin-left:10px;
+	clear:both;
+}
+
+#footer-sidebar ul li{
+	float:left;
+	text-align:center;
+}
+#footer-sidebar li a{
+	display:bolck;
+}
+
+</style>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div id="wrap"> <!-- 전체 div 시작 -->
+	<!-- 상단 네비게이션 시작 -->
+	<nav class="navbar navbar-expand-lg navbar-light"> <!-- 메뉴 밝게 -->
+		<!-- navbar 안에서 container로 넓게 제어 후 하위 내용 명시-->
+		<div class="container-fluid">
+			<div>
+				<a class="navbar-brand" href="#">
+				<img src="../image/last.JPG" width="300">
+				</a>
+				<!-- 모바일 메뉴 아이콘 시작 (모바일 크기일 때는 아이콘 보이고 데탑 크기면 안보임) -->
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"> <!-- bs-target이 아래에 있는 id="navbarContent"> 호출 -->
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			<!-- 모바일 메뉴 아이콘 끝 -->
+			</div>
+			
+			<!-- 메뉴 시작 -->
+			<div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+				<ul class="navbar-nav me-auto mb-3 mb-lg-0"> <!-- 메뉴 -->
+				
+					<!-- drop down 메뉴 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">관람·참여</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" class="dropdown-item">서울</a></li>
+								<li><a href="#" class="dropdown-item">과천</a></li>
+								<li><a href="#" class="dropdown-item">덕수궁</a></li>
+								<li><a href="#" class="dropdown-item">청주</a></li>
+								<li><a href="#" class="dropdown-item">어린이미술관</a></li>
+								<li><a href="#" class="dropdown-item">이벤트</a></li>
+								<li><a href="#" class="dropdown-item">통합예약</a></li>
+								<li><a href="#" class="dropdown-item">전시해설</a></li>
+								<li><a href="#" class="dropdown-item">레지던시</a></li>
+								<li><a href="#" class="dropdown-item">미술은행</a></li>
+							</ul>
+					</li>
+					<!-- drop down 메뉴 끝 -->
+					<!-- drop down 메뉴 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">전시</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" class="dropdown-item">현재전시</a></li>
+								<li><a href="#" class="dropdown-item">과거전시</a></li>
+								<li><a href="#" class="dropdown-item">예정전시</a></li>
+							</ul>
+					</li>
+					<!-- drop down 메뉴 끝 -->
+					<!-- drop down 메뉴 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">교육</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" class="dropdown-item">미술관교육소개</a></li>
+								<li><a href="#" class="dropdown-item">어린이</a></li>
+								<li><a href="#" class="dropdown-item">청소년</a></li>
+								<li><a href="#" class="dropdown-item">교사</a></li>
+								<li><a href="#" class="dropdown-item">성인</a></li>
+								<li><a href="#" class="dropdown-item">교육자료실</a></li>
+								<li><a href="#" class="dropdown-item">참여신청</a></li>
+							</ul>
+					</li>
+					<!-- drop down 메뉴 끝 -->
+					<!-- drop down 메뉴 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">소장품</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" class="dropdown-item">소장품 검색</a></li>
+								<li><a href="#" class="dropdown-item">소장품 탐색</a></li>
+								<li><a href="#" class="dropdown-item">보존과학</a></li>
+							</ul>
+					</li>
+					<!-- drop down 메뉴 끝 -->
+					
+					<!-- drop down 메뉴 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">미술연구</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" class="dropdown-item">도서와 아카이브</a></li>
+								<li><a href="#" class="dropdown-item">연구</a></li>
+								<li><a href="#" class="dropdown-item">발간자료</a></li>
+							</ul>
+					</li>
+					<!-- drop down 메뉴 끝 -->
+					<!-- drop down 메뉴 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">디지털미술관</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" class="dropdown-item">메인</a></li>
+								<li><a href="#" class="dropdown-item">맞춤검색</a></li>
+								<li><a href="#" class="dropdown-item">오디오가이드</a></li>
+								<li><a href="#" class="dropdown-item">이용자갤러리</a></li>
+							</ul>
+					</li>
+					<!-- drop down 메뉴 끝 -->
+					<!-- drop down 메뉴 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">서울관10축제</a>
+							<ul class="dropdown-menu">
+								<li><a href="#" class="dropdown-item">행사소개</a></li>
+							</ul>
+					</li>
+					<!-- drop down 메뉴 끝 -->
+					
+				</ul>
+				<!-- 검색창 -->
+				<form class="d-flex">
+					<input type="search" id="input-search" class="form-control me-2" placeholder="Search">
+					<button type="submit" id="search-submit" class="btn btn-dark">Search</button>
+				</form>
+
+			</div>
+			<!-- 메뉴 끝 -->
+		</div>
+	</nav>
+	<!-- 상단 네비게이션 끝 -->
+	
+	<!-- 구분선 -->
+	<hr width = "100%">
+	
+	<!-- 전시 예약칸 -->
+	<br>
+	<div class="content">
+		<div id="text">
+			<h1><b>국립현대미술관 관람 예약 바로가기</b></h1>
+			<p>
+				화요일-일요일 10:00-18:00 (월요일 서울 개관)<br>
+				<small>서울·덕수궁 : 수요일, 토요일 야간개장 10:00-21:00</small><br><br>
+			</p>
+		</div>
+		<div id="date">
+			<div class="datepicker"><input type="text" id="datepicker"><br></div>
+			<div class="reservationbutton"><button type="button" class="btn btn-dark">전시관람 예약하기</button><br></div>
+			<div class="qnabutton"><button type="button" class="btn btn-light">자주 묻는 질문 바로 가기</button></div>
+		<br></div>
+	</div>
+	
+	<!-- 구분선 -->
+	<hr width="100%">
+	
+	
+	<!-- 여기 위에 배너같은거 넣기 -->
+	<!-- 나탈리 carousel전체 시작 -->
+	<br>
+	<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+			<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button> 
+			<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button> 
+		</div>
+		<div class="carousel-inner">
+			<!-- 0 이미지 시작 -->
+			<div class="carousel-item active">
+				<img src="../image/나탈리2.jpg"  class="d-block w-100">
+				<div class="carousel-caption">
+					<h6>Natalie Karpushenko</h6>
+				</div>
+			</div>
+			<!-- 0 이미지 끝 -->
+			<!-- 1 이미지 시작 -->
+			<div class="carousel-item text-align:center">
+				<img src="../image/나탈리1.jpg"  class="d-block w-100">
+				<div class="carousel-caption">
+					<h6>Natalie Karpushenko</h6>
+				</div>
+			</div>
+			<!-- 1 이미지 끝 -->
+			<!-- 2 이미지 시작 -->
+			<div class="carousel-item text-align:center">
+				<img src="../image/나탈리3.jpg"  class="d-block w-100">
+				<div class="carousel-caption">
+					<h6>Natalie Karpushenko</h6>
+				</div>
+			</div>
+			<!-- 2 이미지 끝 -->
+		</div> <!-- end of .carousel-inner -->
+		
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"> <!-- data-bs 어쩌구 js랑 연동하는거임 -->
+			<span class="carousel-control-prev-icon"></span>
+			<span class="visually-hidden">Previous</span> <!-- 보여지진 않고 그냥 버튼 설명으로 넣을거임 -->
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"> 
+			<span class="carousel-control-next-icon"></span>
+			<span class="visually-hidden">Next</span> <!-- 보여지진 않고 그냥 버튼 설명으로 넣을거임 -->
+		</button>
+	</div> <br><br>
+	<!-- 나탈리 carousel전체 끝 -->
+
+	<!-- 구분선 -->
+	<hr width="100%"><br>
+	
+	<!-- 내용 시작 -->
+	<div id="art1">
+		<ul>
+			<div><img src="../image/장욱진.jpg" width="1200"><br></div>
+			<li><br><h4><b>가장 진지한 고백 : 장욱진 회고전</b></h4>2023.09.14.-2024.2.12.</li>
+			<li><br><button type="button" class="btn btn-dark">전시 예약 바로가기</button></li>
+		</ul>
+	</div><br><br>
+	<!-- 내용 끝 -->
+	<!-- 구분선 -->
+	<hr width="100%"><br>
+	
+	<!-- 내용 시작 -->
+	<section>
+	<div id="art2">
+		<ul>
+			<div><img src="../image/이경준.jpg"width="1200"><br></div>
+			<li><br><h4><b>이경준 사진전: 원 스텝 어웨이</b></h4>2023.10.27.-2024.03.31.</li>
+			<li><br><button type="button" class="btn btn-dark">전시 예약 바로가기</button></li>
+		</ul>
+	</div><br><br>
+	<!-- 구분선 -->
+	<hr width="100%"><br>
+	</section>
+	<!-- 내용 끝 -->
+	
+	<!-- 미술관 위치 -->
+	<div class="location">
+	<table>
+	<colgroup>
+		<col style="width:25%;"/>
+		<col style="width:25%;"/>
+		<col style="width:25%;"/>
+		<col style="width:25%;"/>
+	</colgroup>
+	<tbody>
+	<tr>
+		<th><img src="../image/서울.JPG" width="90%"></th>
+		<th><img src="../image/과천.JPG" width="90%"></th>
+		<th><img src="../image/덕수궁.JPG" width="90%"></th>
+		<th><img src="../image/청주.JPG" width="90%"></th>
+	</tr>
+	<tr>
+		<th><br><h4><b>서울</b></h4></th>
+		<th><br><h4><b>과천</b></h4></th>
+		<th><br><h4><b>덕수궁</b></h4></th>
+		<th><br><h4><b>청주</b></h4></th>
+	</tr>
+	<tr>
+		<th><small>월요일,화요일,목요일,금요일,일요일,10:00–18:00
+				<br>수요일,토요일 야간개장 10:00–21:00</small></th>
+		<th><small>화요일–일요일(월요일 휴관),10:00–18:00</small></th>		
+		<th><small>화요일,목요일,금요일,일요일(월요일 휴관),10:00–18:00
+				<br>수요일,토요일 야간개장,10:00–21:00</small></th>		
+		<th><small>화요일–일요일(월요일 휴관),10:00–18:00</small></th>		
+	</tr>
+	<tr>
+		<td>
+			<br><button type="button" class="btn btn-outline-dark">전시</button>
+			<button type="button" class="btn btn-outline-dark">필름앤비디오</button>
+			<button type="button" class="btn btn-outline-dark">다원예술</button>
+			<button type="button" class="btn btn-outline-dark">교육</button>
+			<button type="button" class="btn btn-outline-dark">이벤트</button>
+		</td>
+		<td>
+			<br><button type="button" class="btn btn-outline-dark">전시</button>
+				<button type="button" class="btn btn-outline-dark">교육</button>
+				<button type="button" class="btn btn-outline-dark">어린이미술관</button>
+				<button type="button" class="btn btn-outline-dark">이벤트</button>
+		</td>
+		<td>
+			<br><button type="button" class="btn btn-outline-dark">전시</button>
+		</td>
+		<td>
+			<br><button type="button" class="btn btn-outline-dark">전시</button>
+				<button type="button" class="btn btn-outline-dark">이벤트</button>
+		</td>
+	</tr>
+	</table>	
+	</div>
+	<br>
+	<!-- 미술관 위치 끝 -->
+
+	<!-- 구분선 -->
+	<hr width="100%">
+	<!-- a태그 배너 시작 -->
+	<div id="banner">
+		<a href="#"><img src="../image/banner.JPG"></a>
+	</div>
+	<!-- a태그 배너 끝 -->
+	<!-- 구분선 -->
+	<hr width="100%">
+	
+	<!-- 하단 메뉴 -->
+	<div id="all_bar">
+		<ul id="newsletter">
+			<li><h3><b><a href="#">MMCA 뉴스레터 구독 신청</a></h3></b></li>
+			<li><button type="button" class="btn btn-outline-dark">구독하기</button></li>
+			<li><h3><b><a href="#">뉴스레터</a></h3></b></li>
+			<li><h3><b><a href="#">소식지</a></h3></b></li>
+			<li><h3><b><a href="#">멤버십</a></h3></b></li>
+			<li><h3><b><a href="#">온라인숍</a><br></h3></b></li>
+		</ul>
+		<ul id="social">
+			<h5>소셜</h5>
+				<li><small><a href="https://www.instagram.com/mmcakorea/">인스타그램</a></small></li>
+				<li><small><a href="https://www.youtube.com/user/MMCAKorea">유튜브</a></small></li>
+				<li><small><a href="https://www.facebook.com/mmcakorea">페이스북</a></small></li>
+				<li><small><a href="https://twitter.com/mmcakorea">트위터</a></small></li>
+				<li><small><a href="https://tv.naver.com/mmca">네이버</a></small></li>
+				<li><small><a href="https://post.naver.com/mmca2017">네이버포스트</a></small></li>
+		</ul>
+		<ul id="law">
+			<h5>법적고지</h5>
+				<li><small><a href="#">개인정보처리방침</a></small></li>
+				<li><small><a href="#">이용약관</a></small></li>
+				<li><small><a href="#">저작권정책</a></small></li>
+				<li><small><a href="#">국민신문고</a></small></li>
+				<li><small><a href="#">정보공개</a></small></li>
+				<li><small><a href="6.html">클린신고센터</a></small></li>
+		</ul>
+		<ul id="qna">
+			<h5>참여</h5>
+				<li><small><a href="1.html">미술관 소개</a></small></li>
+				<li><small><a href="2.html">새소식</a></small></li>
+				<li><small><a href="3.html">채용</a></small></li>
+				<li><small><a href="4.html">보도자료</a></small></li>
+				<li><small><a href="5.html">후원</a></small></li>
+				<li><small><a href="6.html">자원봉사</a></small></li>
+				<li><small><a href="3.html">시설대관·복제신청</a></small></li>
+				<li><small><a href="4.html">자주 묻는 질문</a></small></li>
+				<li><small><a href="5.html">사이트맵</a></small></li>
+				<li><small><a href="6.html">국립현대미술관 문화재단</a></small></li>
+		</ul>
+	</div>
+	<br>
+	
+	<!-- 구분선 -->
+	<hr width="100%"><br>
+	
+	<!-- 하단 메뉴 시작 -->
+	<footer>
+	<nav>
+		<ul id="number">
+			<li><a href="#">대표자: 김성희, 사업자등록번호: 138‒83‒00313</a></li>
+			<li><a href="#">대표전화: (서울) 02‒3701‒9500,</a></li>
+			<li><a href="#">(과천) 02‒2188‒6000,</a></li>
+			<li><a href="#">(덕수궁) 02‒2022‒0600,</a></li>
+			<li><a href="#">(청주) 043‒261‒1400</a></li>
+			<p><small>&copy;2021 National Museum of Modern and Contemporary Art, Korea</small></p>
+		</ul>
+		<a id="identification" href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank"><img src="../image/인증.JPG"></a>
+	
+	<nav id="last">
+		<img src="../image/last.JPG">
+	</nav>
+	</nav>
+	</footer>
+	<!-- 하단 메뉴 끝 -->
+
+</div> <!-- 전체 div 끝-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+</body>
+</html>
